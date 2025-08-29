@@ -1,0 +1,8 @@
+name: cpp-env
+channels:
+  - conda-forge
+dependencies:
+  - xeus-cling
+  - notebook
+  - jupyterlab
+
