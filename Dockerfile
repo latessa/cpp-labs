@@ -1,4 +1,4 @@
-FROM jlatessa/cpp-env@sha256:42075c73cdf4897b932056d4a843eb86dcb07523fb0e0e5908bcf74ae7a2c83c
+FROM jlatessa/cpp-env@sha256:24af50645c50adfb101ebcfffcedaa40a374fa0f45a2bc0c1796b5fa54d6374e
 
 COPY . /home/jovyan
 
