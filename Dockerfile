@@ -8,3 +8,5 @@ RUN chown -R jovyan:users /home/jovyan
 
 USER jovyan
 WORKDIR /home/jovyan
+
+CMD ["micromamba", "run", "-n", "base", "jupyter", "lab", "--ip=0.0.0.0"]
