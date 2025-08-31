@@ -1,4 +1,4 @@
-FROM jlatessa/cpp-env@sha256:cbd44d40b1c8f192f9ce030210e1e4bc98ae6b876c67e6601b9eb6853658ae6d
+FROM jlatessa/cpp-env@sha256:1583265508ea04637fc8303861c8418c5d137c3a94e3c01133ac65d0c76472d8
 
 RUN id -u jovyan &>/dev/null || useradd -m -s /bin/bash -N -u 1000 -g users jovyan
 
