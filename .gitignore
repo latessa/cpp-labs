@@ -27,7 +27,7 @@ Thumbs.db
 .vscode/
 
 # Notebook outputs (optional—if you want a clean repo)
-**/*.ipynb
+# **/*.ipynb
 
 # Uncomment below if you want to keep notebooks but ignore outputs
 # **/*.ipynb
