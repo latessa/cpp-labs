@@ -1,15 +1,12 @@
 FROM mambaorg/micromamba:latest
 
-# Set a non-root user and working directory
-USER root
-WORKDIR /home/jovyan
+# Use a neutral build directory
+WORKDIR /tmp/build
 
-# Copy environment spec
 COPY environment.yml .
 
-# Install environment
 RUN micromamba install -y -n base -f environment.yml && \
     micromamba clean -a -y
 
-# Ensure permissions allow Binder to mount repo here
+# Ensure /home/jovyan is writable but untouched
 RUN chmod -R 777 /home/jovyan
