@@ -8,3 +8,6 @@ Run the code snippets in the notebooks by clicking on the cell and pressing Shif
 
 ## Lab 01 Set Theory
 [Lab 01 Examples](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab01/Lab01_Examples.ipynb)
+
+## Lab 02 Hamming Code
+[Lab 02 Examples](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab02/Lab02_Examples.ipynb)
