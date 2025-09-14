@@ -11,3 +11,6 @@ Run the code snippets in the notebooks by clicking on the cell and pressing Shif
 
 ## Lab 02 Hamming Code
 [Lab 02 Examples](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab02/Lab02_Examples.ipynb)
+
+## Lab 03 Hamming Code Part 2
+[Lab 03 Examples](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab03/Lab03_Examples.ipynb)
