@@ -14,3 +14,6 @@ Run the code snippets in the notebooks by clicking on the cell and pressing Shif
 
 ## Lab 03 Hamming Code (Transmitter)
 [Lab 03 Examples](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab03/Lab03_Examples.ipynb)
+
+## Lab 04 Base Conversions
+[Lab 04 Examples](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab04/Lab04_Examples.ipynb)
