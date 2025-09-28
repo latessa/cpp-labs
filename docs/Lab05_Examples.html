@@ -7522,7 +7522,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=64ac25a3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fedd9f2a-e490-4b75-8ff4-afb73ab53f92">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7532,7 +7532,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4a63db2a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=400cee4a-03dc-491f-aca8-c997c0341fcb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7564,7 +7564,10 @@ a.anchor-link {
 <p>We've also looked at the bitshift operators <code>&lt;&lt;</code> (left shift) and <code>&gt;&gt;</code> (right shift).</p>
 <p>We have not yet mentioned the bitwise NOT operator <code>~</code> (tilde).</p>
 <p>The logical NOT operator <code>!</code> negates a boolean expression and will always evaluate to either <code>true</code> or <code>false</code>, while the bitwise NOT operator <code>~</code> inverts all bits of its operand.</p>
-<table style="width:80%; font-size:1.2em;">
+<style>
+table, th, td { font-size: 1.15em; }
+</style>
+<table>
 <tr>
 <th>Decimal</th>
 <th>Binary</th>
@@ -7744,7 +7747,10 @@ unsigned int c = 2, ~c = 4294967293, ~c = 11111111111111111111111111111101
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Truth-Tables-and-Satisfiability">Truth Tables and Satisfiability<a class="anchor-link" href="#Truth-Tables-and-Satisfiability">¶</a></h2><p>A boolean expression is <code>satisfiable</code> if there exists at least one assignment of truth values to its variables that makes the expression evaluate to true.</p>
 <p>A satisfiability expression with two variables can have $2^2 = 4$ possible combinations of truth values:</p>
-<table style="width:80%; font-size:1.2em;">
+<style>
+table, th, td { font-size: 1.15em; }
+</style>
+<table>
 <tr>
 <th>A</th>
 <th>B</th>
@@ -7777,7 +7783,7 @@ unsigned int c = 2, ~c = 4294967293, ~c = 11111111111111111111111111111101
 </tr>
 </table>
 <p>A satisfiability expression with three variables can have $2^3 = 8$ possible combinations of truth values. Below is an example where only one combination is satisfiable, such as the expression <code>(A AND B AND (NOT C))</code>:</p>
-<table style="width:80%; font-size:1.2em;">
+<table>
 <tr>
 <th>A</th>
 <th>B</th>
@@ -7902,15 +7908,20 @@ A &amp;&amp; B &amp;&amp; !C = 1
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4>Truth Table for <code>(((A &amp;&amp; B) &amp;&amp; (B || C)) &amp;&amp; !(B &amp;&amp; C))</code></h4>
-<table style="width:100%; font-size:1.2em;">
+<style>
+  table, th, td { font-size: 1.15em; border-collapse: collapse; border: 1px solid #ccc; padding: 4px; }
+</style>
+<table>
 <tr>
-<th>A</th><th>B</th><th>C</th>
-<th>(A &amp;&amp; B)</th>
-<th>(B || C)</th>
-<th>(A &amp;&amp; B) &amp;&amp; (B || C)</th>
-<th>(B &amp;&amp; C)</th>
-<th>!(B &amp;&amp; C)</th>
-<th>((A &amp;&amp; B) &amp;&amp; (B || C)) &amp;&amp; !(B &amp;&amp; C)</th>
+<th style="width:5%;">A</th>
+<th style="width:5%;">B</th>
+<th style="width:5%;">C</th>
+<th style="width:10%;">(A &amp;&amp; B)</th>
+<th style="width:10%;">(B || C)</th>
+<th style="width:15%;">(A &amp;&amp; B) &amp;&amp; (B || C)</th>
+<th style="width:10%;">(B &amp;&amp; C)</th>
+<th style="width:10%;">!(B &amp;&amp; C)</th>
+<th style="width:30%;">((A &amp;&amp; B) &amp;&amp; (B || C)) &amp;&amp; !(B &amp;&amp; C)</th>
 </tr>
 <tr><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td><td>true</td><td>false</td></tr>
 <tr><td>false</td><td>false</td><td>true</td><td>false</td><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td></tr>
@@ -7933,7 +7944,7 @@ A &amp;&amp; B &amp;&amp; !C = 1
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Relating-Satisfiability-to-Logic-Circuits">Relating Satisfiability to Logic Circuits<a class="anchor-link" href="#Relating-Satisfiability-to-Logic-Circuits">¶</a></h2><p>Here is an example of a logic circuit created in <a href="https://logic.ly/demo/">Logic.ly</a> to visualize satisfiability the satisfiability expression from above.</p>
 <p><code>((A AND B) AND (B OR C)) AND NOT(B AND C)</code>.</p>
-<p><img alt="Logic.ly Satisfiability Example" src="https://latessa.github.io/cpp-labs/images/Lab05/logicly_satisfy.png"/></p>
+<p><img alt="Logic.ly Satisfiability Example" src="../images/Lab05/logicly_satisfy.png"/></p>
 <p>Experiment with your own designs on the <a href="https://logic.ly/demo/">Logic.ly</a> demo site.</p>
 <p>The demo site will not let you save or export your designs, but the full version of Logic.ly is available on the Engineering vLAB.</p>
 </div>
@@ -7960,7 +7971,11 @@ A &amp;&amp; B &amp;&amp; !C = 1
 <ul>
 <li>With the above approach, we used <code>logical</code> operators to compare each row of the truth table one at a time. Could we instead compare all rows at once using <code>bitwise</code> operators instead? Bitwise operators act on all bits of a number at once.</li>
 </ul>
-<table align="center" style="width:40%; font-size:1.2em;">
+<div align="center">
+<style>
+table, th, td { font-size: 1.05em; }
+</style>
+<table>
 <tr>
 <td><b>A</b> = 0011</td>
 <td>false, false, true, true</td>
@@ -7970,6 +7985,7 @@ A &amp;&amp; B &amp;&amp; !C = 1
 <td>false, true, false, true</td>
 </tr>
 </table>
+</div>
 <ul>
 <li>Recognize that <code>0011</code> (the truth table values for column A) is just a number. In this case for a 2-variable truth table, it is the integer <code>3</code>. Similarly, <code>0101</code> (the truth table values for column B) is just the integer <code>5</code>.</li>
 <li>In the lab assignment, we are working with 3-variable truth table, so the numbers representing the truth table columns will not be the same as for a 2-variable truth table.</li>
