@@ -7540,14 +7540,14 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 02, we are limited to these includes.</span>
-<span class="c1">// Other libraries that can do the set or binary operations for us are not allowed.</span>
-<span class="c1">// For example, DO NOT include &lt;bitset&gt; or &lt;set&gt;.</span>
+<div class="highlight hl-C++17"><pre><span></span>// For Lab 02, we are limited to these includes.
+// Other libraries that can do the set or binary operations for us are not allowed.
+// For example, DO NOT include &lt;bitset&gt; or &lt;set&gt;.
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;cmath&gt;
 </pre></div>
 </div>
 </div>
@@ -7599,10 +7599,10 @@ False XOR False = False
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-c++"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"True XOR True: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">     </span><span class="c1">// Outputs 0 (false)</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"True XOR False: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">   </span><span class="c1">// Outputs 1 (true)</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"False XOR True: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="nb">false</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">   </span><span class="c1">// Outputs 1 (true)</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"False XOR False: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="nb">false</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Outputs 0 (false)</span>
+<div class="highlight hl-C++17"><pre><span></span>std::cout &lt;&lt; "True XOR True: " &lt;&lt; (true ^ true) &lt;&lt; std::endl;     // Outputs 0 (false)
+std::cout &lt;&lt; "True XOR False: " &lt;&lt; (true ^ false) &lt;&lt; std::endl;   // Outputs 1 (true)
+std::cout &lt;&lt; "False XOR True: " &lt;&lt; (false ^ true) &lt;&lt; std::endl;   // Outputs 1 (true)
+std::cout &lt;&lt; "False XOR False: " &lt;&lt; (false ^ false) &lt;&lt; std::endl; // Outputs 0 (false)
 </pre></div>
 </div>
 </div>
@@ -7638,10 +7638,10 @@ False XOR False: 0
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-c++"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"1 ^ 2     = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">     </span><span class="c1">// Outputs 3</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"1 ^ 4     = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">     </span><span class="c1">// Outputs 5</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"2 ^ 4     = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">     </span><span class="c1">// Outputs 6</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"1 ^ 2 ^ 4 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Outputs 7</span>
+<div class="highlight hl-C++17"><pre><span></span>std::cout &lt;&lt; "1 ^ 2     = " &lt;&lt; (1 ^ 2) &lt;&lt; std::endl;     // Outputs 3
+std::cout &lt;&lt; "1 ^ 4     = " &lt;&lt; (1 ^ 4) &lt;&lt; std::endl;     // Outputs 5
+std::cout &lt;&lt; "2 ^ 4     = " &lt;&lt; (2 ^ 4) &lt;&lt; std::endl;     // Outputs 6
+std::cout &lt;&lt; "1 ^ 2 ^ 4 = " &lt;&lt; (1 ^ 2 ^ 4) &lt;&lt; std::endl; // Outputs 7
 </pre></div>
 </div>
 </div>
@@ -7748,7 +7748,7 @@ With 6 parity bits, we can accommodate 57 data bits. $2^6 = 64$, which is suffic
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <html img="true">
-<img alt="Hamming Code Parity Bits" src="../images/Lab02/parity_bits_1511.png" style="width:300px;"/>
+<img alt="Hamming Code Parity Bits" src="https://latessa.github.io/cpp-labs/images/Lab02/parity_bits_1511.png" style="width:300px;"/>
 </html>
 </div>
 </div>
@@ -7787,7 +7787,7 @@ In Hamming code (7,4), the parity bit at index 4 checks the bits at indexes 4, 5
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <html img="true">
-<img alt="Hamming Code Example of Bits to Send (Parity Bits Blank)" src="../images/Lab02/bits_to_send_blank.png" style="width:500px;"/>
+<img alt="Hamming Code Example of Bits to Send (Parity Bits Blank)" src="https://latessa.github.io/cpp-labs/images/Lab02/bits_to_send_blank.png" style="width:500px;"/>
 </html>
 </div>
 </div>
@@ -7811,7 +7811,7 @@ In Hamming code (7,4), the parity bit at index 4 checks the bits at indexes 4, 5
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <html img="true">
-<img alt="Hamming Code Example of Bits to Send (Parity Bits Filled In)" src="../images/Lab02/bits_to_send_filled.png" style="width:500px;"/>
+<img alt="Hamming Code Example of Bits to Send (Parity Bits Filled In)" src="https://latessa.github.io/cpp-labs/images/Lab02/bits_to_send_filled.png" style="width:500px;"/>
 </html>
 </div>
 </div>
@@ -7846,7 +7846,7 @@ In Hamming code (7,4), the parity bit at index 4 checks the bits at indexes 4, 5
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <html img="true">
-<img alt="Hamming Code Example of Bits Received (Recalculated Parity Bits Blank)" src="../images/Lab02/bits_received_blank.png" style="width:700px;"/>
+<img alt="Hamming Code Example of Bits Received (Recalculated Parity Bits Blank)" src="https://latessa.github.io/cpp-labs/images/Lab02/bits_received_blank.png" style="width:700px;"/>
 </html>
 </div>
 </div>
@@ -7870,7 +7870,7 @@ In Hamming code (7,4), the parity bit at index 4 checks the bits at indexes 4, 5
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <html img="true">
-<img alt="Hamming Code Example of Bits Received (Recalculated Parity Bits Filled In)" src="../images/Lab02/bits_received_filled.png" style="width:700px;"/>
+<img alt="Hamming Code Example of Bits Received (Recalculated Parity Bits Filled In)" src="https://latessa.github.io/cpp-labs/images/Lab02/bits_received_filled.png" style="width:700px;"/>
 </html>
 </div>
 </div>
@@ -7914,7 +7914,7 @@ Parity bit 4 is different on the sent message than it is on the received message
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <html img="true">
-<img alt="Hamming Code Venn Diagram" src="../images/Lab02/hamming74.png" style="width:500px;"/>
+<img alt="Hamming Code Venn Diagram" src="https://latessa.github.io/cpp-labs/images/Lab02/hamming74.png" style="width:500px;"/>
 </html>
 </div>
 </div>
@@ -8064,32 +8064,32 @@ Parity bit 4 is different on the sent message than it is on the received message
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-c++"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Parity Group 1 Membership"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"1 &amp; 1 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Group 1 Parity Bit</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"1 &amp; 2 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Not in Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"1 &amp; 3 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// In Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"1 &amp; 4 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Not in Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"1 &amp; 5 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// In Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"1 &amp; 6 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Not in Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"1 &amp; 7 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// In Group</span>
+<div class="highlight hl-C++17"><pre><span></span>std::cout &lt;&lt; "Parity Group 1 Membership" &lt;&lt; std::endl;
+std::cout &lt;&lt; "1 &amp; 1 = " &lt;&lt; (1 &amp; 1) &lt;&lt; std::endl; // Group 1 Parity Bit
+std::cout &lt;&lt; "1 &amp; 2 = " &lt;&lt; (1 &amp; 2) &lt;&lt; std::endl; // Not in Group
+std::cout &lt;&lt; "1 &amp; 3 = " &lt;&lt; (1 &amp; 3) &lt;&lt; std::endl; // In Group
+std::cout &lt;&lt; "1 &amp; 4 = " &lt;&lt; (1 &amp; 4) &lt;&lt; std::endl; // Not in Group
+std::cout &lt;&lt; "1 &amp; 5 = " &lt;&lt; (1 &amp; 5) &lt;&lt; std::endl; // In Group
+std::cout &lt;&lt; "1 &amp; 6 = " &lt;&lt; (1 &amp; 6) &lt;&lt; std::endl; // Not in Group
+std::cout &lt;&lt; "1 &amp; 7 = " &lt;&lt; (1 &amp; 7) &lt;&lt; std::endl; // In Group
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">Parity Group 2 Membership"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"2 &amp; 1 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Not in Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"2 &amp; 2 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Group 2 Parity Bit</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"2 &amp; 3 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// In Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"2 &amp; 4 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Not in Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"2 &amp; 5 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Not in Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"2 &amp; 6 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// In Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"2 &amp; 7 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// In Group</span>
+std::cout &lt;&lt; "\nParity Group 2 Membership" &lt;&lt; std::endl;
+std::cout &lt;&lt; "2 &amp; 1 = " &lt;&lt; (2 &amp; 1) &lt;&lt; std::endl; // Not in Group
+std::cout &lt;&lt; "2 &amp; 2 = " &lt;&lt; (2 &amp; 2) &lt;&lt; std::endl; // Group 2 Parity Bit
+std::cout &lt;&lt; "2 &amp; 3 = " &lt;&lt; (2 &amp; 3) &lt;&lt; std::endl; // In Group
+std::cout &lt;&lt; "2 &amp; 4 = " &lt;&lt; (2 &amp; 4) &lt;&lt; std::endl; // Not in Group
+std::cout &lt;&lt; "2 &amp; 5 = " &lt;&lt; (2 &amp; 5) &lt;&lt; std::endl; // Not in Group
+std::cout &lt;&lt; "2 &amp; 6 = " &lt;&lt; (2 &amp; 6) &lt;&lt; std::endl; // In Group
+std::cout &lt;&lt; "2 &amp; 7 = " &lt;&lt; (2 &amp; 7) &lt;&lt; std::endl; // In Group
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">Parity Group 4 Membership"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"4 &amp; 1 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Not in Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"4 &amp; 2 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Not in Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"4 &amp; 3 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Not in Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"4 &amp; 4 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Group 4 Parity Bit</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"4 &amp; 5 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// In Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"4 &amp; 6 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// In Group</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"4 &amp; 7 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// In Group</span>
+std::cout &lt;&lt; "\nParity Group 4 Membership" &lt;&lt; std::endl;
+std::cout &lt;&lt; "4 &amp; 1 = " &lt;&lt; (4 &amp; 1) &lt;&lt; std::endl; // Not in Group
+std::cout &lt;&lt; "4 &amp; 2 = " &lt;&lt; (4 &amp; 2) &lt;&lt; std::endl; // Not in Group
+std::cout &lt;&lt; "4 &amp; 3 = " &lt;&lt; (4 &amp; 3) &lt;&lt; std::endl; // Not in Group
+std::cout &lt;&lt; "4 &amp; 4 = " &lt;&lt; (4 &amp; 4) &lt;&lt; std::endl; // Group 4 Parity Bit
+std::cout &lt;&lt; "4 &amp; 5 = " &lt;&lt; (4 &amp; 5) &lt;&lt; std::endl; // In Group
+std::cout &lt;&lt; "4 &amp; 6 = " &lt;&lt; (4 &amp; 6) &lt;&lt; std::endl; // In Group
+std::cout &lt;&lt; "4 &amp; 7 = " &lt;&lt; (4 &amp; 7) &lt;&lt; std::endl; // In Group
 </pre></div>
 </div>
 </div>
