@@ -12,6 +12,9 @@ on:
     paths:
       - '**/*.ipynb'
 
+permissions:
+  contents: write
+
 jobs:
   convert-and-publish:
     runs-on: ubuntu-latest
