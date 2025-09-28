@@ -46,10 +46,9 @@ jobs:
       - name: Commit and push HTML files
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: stefanzweifel/git-auto-commit-action@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.CPP_LABS_PAT_SECRET }}
         with:
           commit_message: "Auto-Convert Jupyter to HTML for GitHub Pages"
           file_pattern: docs/*.html
           branch: main
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.CPP_LABS_PAT_SECRET }}
