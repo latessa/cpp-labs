@@ -7537,17 +7537,17 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C++17"><pre><span></span>// For Lab 05, we are limited to these includes.
-// Other libraries that can do the set or binary operations for us are not allowed.
-// For example, DO NOT include &lt;bitset&gt; or &lt;set&gt;.
+<div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 05, we are limited to these includes.</span>
+<span class="c1">// Other libraries that can do the set or binary operations for us are not allowed.</span>
+<span class="c1">// For example, DO NOT include &lt;bitset&gt; or &lt;set&gt;.</span>
 
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &lt;cmath&gt;
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -7628,30 +7628,30 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C++17"><pre><span></span>auto int2bitstring = [](unsigned int n, int bits = 32) {
-    std::string result;
-    for (int i = bits - 1; i &gt;= 0; --i) {
-        result += (n &amp; (1 &lt;&lt; i)) ? '1' : '0';
-    }
-    return result;
-};
+<div class="highlight hl-c++"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">int2bitstring</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bits</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sc">'1'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="sc">'0'</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">};</span>
 
-int a = 0;
-int b = 1;
-int c = 2; // Binary: 010
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Binary: 010</span>
 
-// Logical NOT operator
-std::cout &lt;&lt; "int a = " &lt;&lt; a &lt;&lt; ", !a = " &lt;&lt; !a &lt;&lt; ", !a = " &lt;&lt; int2bitstring(!a) &lt;&lt; std::endl;
-std::cout &lt;&lt; "int b = " &lt;&lt; b &lt;&lt; ", !b = " &lt;&lt; !b &lt;&lt; ", !b = " &lt;&lt; int2bitstring(!b) &lt;&lt; std::endl;
-std::cout &lt;&lt; "int c = " &lt;&lt; c &lt;&lt; ", !c = " &lt;&lt; !c &lt;&lt; ", !c = " &lt;&lt; int2bitstring(!c) &lt;&lt; std::endl &lt;&lt; std::endl;
+<span class="c1">// Logical NOT operator</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"int a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">!</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">!</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"int b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">!</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"int c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">!</span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">!</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-// Bitwise NOT operator
-std::cout &lt;&lt; "int a = " &lt;&lt; a &lt;&lt; ", ~a = " &lt;&lt; ~a &lt;&lt; ", ~a = " &lt;&lt; int2bitstring(~a) &lt;&lt; std::endl;
-std::cout &lt;&lt; "int b = " &lt;&lt; b &lt;&lt; ", ~b = " &lt;&lt; ~b &lt;&lt; ", ~b = " &lt;&lt; int2bitstring(~b) &lt;&lt; std::endl;
-std::cout &lt;&lt; "int c = " &lt;&lt; c &lt;&lt; ", ~c = " &lt;&lt; ~c &lt;&lt; ", ~c = " &lt;&lt; int2bitstring(~c) &lt;&lt; std::endl;
+<span class="c1">// Bitwise NOT operator</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"int a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">~</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">~</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"int b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">~</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">~</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"int c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">~</span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">~</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -7681,22 +7681,22 @@ int c = 2, ~c = -3, ~c = 11111111111111111111111111111101
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C++17"><pre><span></span>unsigned int a = 0;
-unsigned int b = 1;
-unsigned int c = 2; // Binary: 010
+<div class="highlight hl-c++"><pre><span></span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Binary: 010</span>
 
-// Logical NOT operator
-std::cout &lt;&lt; "unsigned int a = " &lt;&lt; a &lt;&lt; ", !a = " &lt;&lt; !a &lt;&lt; ", !a = " &lt;&lt; int2bitstring(!a) &lt;&lt; std::endl;
-std::cout &lt;&lt; "unsigned int b = " &lt;&lt; b &lt;&lt; ", !b = " &lt;&lt; !b &lt;&lt; ", !b = " &lt;&lt; int2bitstring(!b) &lt;&lt; std::endl;
-std::cout &lt;&lt; "unsigned int c = " &lt;&lt; c &lt;&lt; ", !c = " &lt;&lt; !c &lt;&lt; ", !c = " &lt;&lt; int2bitstring(!c) &lt;&lt; std::endl &lt;&lt; std::endl;
+<span class="c1">// Logical NOT operator</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"unsigned int a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">!</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">!</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"unsigned int b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">!</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"unsigned int c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">!</span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", !c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">!</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-// Bitwise NOT operator
-std::cout &lt;&lt; "unsigned int a = " &lt;&lt; a &lt;&lt; ", ~a = " &lt;&lt; ~a &lt;&lt; ", ~a = " &lt;&lt; int2bitstring(~a) &lt;&lt; std::endl;
-std::cout &lt;&lt; "unsigned int b = " &lt;&lt; b &lt;&lt; ", ~b = " &lt;&lt; ~b &lt;&lt; ", ~b = " &lt;&lt; int2bitstring(~b) &lt;&lt; std::endl;
-std::cout &lt;&lt; "unsigned int c = " &lt;&lt; c &lt;&lt; ", ~c = " &lt;&lt; ~c &lt;&lt; ", ~c = " &lt;&lt; int2bitstring(~c) &lt;&lt; std::endl &lt;&lt; std::endl;
+<span class="c1">// Bitwise NOT operator</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"unsigned int a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">~</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~a = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">~</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"unsigned int b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">~</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~b = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">~</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"unsigned int c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">~</span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", ~c = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">int2bitstring</span><span class="p">(</span><span class="o">~</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -7851,26 +7851,26 @@ unsigned int c = 2, ~c = 4294967293, ~c = 11111111111111111111111111111101
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C++17"><pre><span></span>// Satisfiability calculations using two variables A and B
-int A = 1; // true
-int B = 1; // false
-int C = 0; // false
+<div class="highlight hl-c++"><pre><span></span><span class="c1">// Satisfiability calculations using two variables A and B</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
 
-std::cout &lt;&lt; "A &amp;&amp; B = " &lt;&lt; (A &amp;&amp; B) &lt;&lt; std::endl; // AND
-std::cout &lt;&lt; "A || B = " &lt;&lt; (A || B) &lt;&lt; std::endl; // OR
-std::cout &lt;&lt; "!A = " &lt;&lt; (!A) &lt;&lt; std::endl;         // NOT (logical)
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"A &amp;&amp; B = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// AND</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"A || B = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// OR</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"!A = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">         </span><span class="c1">// NOT (logical)</span>
 
-// Example: (A || !B)
-std::cout &lt;&lt; "A || !B = " &lt;&lt; (A || !B) &lt;&lt; std::endl;
+<span class="c1">// Example: (A || !B)</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"A || !B = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-// Example: (A &amp;&amp; B &amp;&amp; !C)
-std::cout &lt;&lt; "A &amp;&amp; B &amp;&amp; !C = " &lt;&lt; (A &amp;&amp; B &amp;&amp; !C) &lt;&lt; std::endl;
+<span class="c1">// Example: (A &amp;&amp; B &amp;&amp; !C)</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"A &amp;&amp; B &amp;&amp; !C = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">C</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-// Example: (((A &amp;&amp; B) &amp;&amp; (B || C)) &amp;&amp; !(B &amp;&amp; C))
-std::cout &lt;&lt; "((A &amp;&amp; B) &amp;&amp; (B || C)) &amp;&amp; !(B &amp;&amp; C) = " &lt;&lt; (((A &amp;&amp; B) &amp;&amp; (B || C)) &amp;&amp; !(B &amp;&amp; C)) &lt;&lt; std::endl;
+<span class="c1">// Example: (((A &amp;&amp; B) &amp;&amp; (B || C)) &amp;&amp; !(B &amp;&amp; C))</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"((A &amp;&amp; B) &amp;&amp; (B || C)) &amp;&amp; !(B &amp;&amp; C) = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(((</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">B</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">C</span><span class="p">))</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">B</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">C</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
