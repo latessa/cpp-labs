@@ -2,9 +2,13 @@ name: Convert Notebooks to HTML for GitHub Pages
 
 on:
   push:
+    branches:
+      - main
     paths:
       - '**/*.ipynb'
   pull_request:
+    branches:
+      - main
     paths:
       - '**/*.ipynb'
 
