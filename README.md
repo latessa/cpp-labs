@@ -23,7 +23,11 @@ Run the code snippets in the notebooks by clicking on the cell and pressing Shif
 
 [Lab 03 Examples (Static)](https://latessa.github.io/cpp-labs/Lab03_Examples.html)
 
-## Lab 04 Base Conversions
+## Lab 04 Base Conversion
 [Lab 04 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab04/Lab04_Examples.ipynb)
 
 [Lab 04 Examples (Static)](https://latessa.github.io/cpp-labs/Lab04_Examples.html)
+
+## Lab 05 Satisfiability (AND/OR/NOT)
+[Lab 05 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab05/Lab05_Examples.ipynb)
+[Lab 05 Examples (Static)](https://latessa.github.io/cpp-labs/Lab05_Examples.html)
