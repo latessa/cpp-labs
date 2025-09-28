@@ -51,4 +51,4 @@ jobs:
           file_pattern: docs/*.html
           branch: main
         env:
-          GITHUB_TOKEN: ${{ secrets.CPP_LABS_PAT_SECRET }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
