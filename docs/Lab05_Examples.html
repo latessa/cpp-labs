@@ -7564,10 +7564,7 @@ a.anchor-link {
 <p>We've also looked at the bitshift operators <code>&lt;&lt;</code> (left shift) and <code>&gt;&gt;</code> (right shift).</p>
 <p>We have not yet mentioned the bitwise NOT operator <code>~</code> (tilde).</p>
 <p>The logical NOT operator <code>!</code> negates a boolean expression and will always evaluate to either <code>true</code> or <code>false</code>, while the bitwise NOT operator <code>~</code> inverts all bits of its operand.</p>
-<style>
-table, th, td { font-size: 1.15em; }
-</style>
-<table>
+<table style="font-size: 1.3em; width: 60%;">
 <tr>
 <th>Decimal</th>
 <th>Binary</th>
@@ -7747,15 +7744,12 @@ unsigned int c = 2, ~c = 4294967293, ~c = 11111111111111111111111111111101
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Truth-Tables-and-Satisfiability">Truth Tables and Satisfiability<a class="anchor-link" href="#Truth-Tables-and-Satisfiability">¶</a></h2><p>A boolean expression is <code>satisfiable</code> if there exists at least one assignment of truth values to its variables that makes the expression evaluate to true.</p>
 <p>A satisfiability expression with two variables can have $2^2 = 4$ possible combinations of truth values:</p>
-<style>
-table, th, td { font-size: 1.15em; }
-</style>
-<table>
+<table style="font-size: 1.3em; width: 60%;">
 <tr>
-<th>A</th>
-<th>B</th>
-<th>NOT B</th>
-<th>(A OR (NOT B))</th>
+<th style="width: 10%">A</th>
+<th style="width: 10%">B</th>
+<th style="width: 20%">NOT B</th>
+<th style="width: 20%">(A OR (NOT B))</th>
 </tr>
 <tr>
 <td>false</td>
@@ -7783,13 +7777,13 @@ table, th, td { font-size: 1.15em; }
 </tr>
 </table>
 <p>A satisfiability expression with three variables can have $2^3 = 8$ possible combinations of truth values. Below is an example where only one combination is satisfiable, such as the expression <code>(A AND B AND (NOT C))</code>:</p>
-<table>
+<table style="font-size: 1.3em; width: 80%;">
 <tr>
-<th>A</th>
-<th>B</th>
-<th>C</th>
-<th>NOT C</th>
-<th>(A AND B AND (NOT C))</th>
+<th style="width: 10%">A</th>
+<th style="width: 10%">B</th>
+<th style="width: 10%">C</th>
+<th style="width: 20%">NOT C</th>
+<th style="width: 20%">(A AND B AND (NOT C))</th>
 </tr>
 <tr>
 <td>false</td>
@@ -7908,17 +7902,14 @@ A &amp;&amp; B &amp;&amp; !C = 1
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4>Truth Table for <code>(((A &amp;&amp; B) &amp;&amp; (B || C)) &amp;&amp; !(B &amp;&amp; C))</code></h4>
-<style>
-  table, th, td { font-size: 1.15em; border-collapse: collapse; border: 1px solid #ccc; padding: 4px; }
-</style>
-<table>
+<table style="font-size: 1.3em; width: 100%;">
 <tr>
 <th style="width:5%;">A</th>
 <th style="width:5%;">B</th>
 <th style="width:5%;">C</th>
 <th style="width:10%;">(A &amp;&amp; B)</th>
 <th style="width:10%;">(B || C)</th>
-<th style="width:15%;">(A &amp;&amp; B) &amp;&amp; (B || C)</th>
+<th style="width:20%;">(A &amp;&amp; B) &amp;&amp; (B || C)</th>
 <th style="width:10%;">(B &amp;&amp; C)</th>
 <th style="width:10%;">!(B &amp;&amp; C)</th>
 <th style="width:30%;">((A &amp;&amp; B) &amp;&amp; (B || C)) &amp;&amp; !(B &amp;&amp; C)</th>
