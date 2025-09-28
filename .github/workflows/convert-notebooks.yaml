@@ -1,0 +1,54 @@
+name: Convert Notebooks to HTML for GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.ipynb'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**/*.ipynb'
+
+jobs:
+  convert-and-publish:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Jupyter
+        run: |
+          python -m pip install --upgrade pip
+          pip install jupyter
+
+      - name: Find new or modified notebooks
+        id: notebooks
+        run: |
+          git fetch origin ${{ github.event.before }}
+          git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep -E '^(A|M)' | grep '.ipynb$' | awk '{print $2}' > changed_notebooks.txt
+
+      - name: Convert notebooks to HTML
+        run: |
+          mkdir -p docs
+          while read nb; do
+            jupyter nbconvert "$nb" --to html --template lab --output-dir docs
+          done < changed_notebooks.txt
+
+      - name: Commit and push HTML files
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          commit_message: "Auto-Convert Jupyter to HTML for GitHub Pages"
+          file_pattern: docs/*.html
+          branch: main
