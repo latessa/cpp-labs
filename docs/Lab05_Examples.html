@@ -7743,7 +7743,7 @@ unsigned int c = 2, ~c = 4294967293, ~c = 11111111111111111111111111111101
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Truth-Tables-and-Satisfiability">Truth Tables and Satisfiability<a class="anchor-link" href="#Truth-Tables-and-Satisfiability">¶</a></h2><p>A boolean expression is <code>satisfiable</code> if there exists at least one assignment of truth values to its variables that makes the expression evaluate to true.</p>
-<p>A satisfiability expression with two variables can have $2^2 = 4$ possible combinations of truth values:</p>
+<p>A satisfiability expression with two variables can have $2^2 = 4$ possible arrangements of truth values:</p>
 <table style="font-size: 1.3em; width: 60%;">
 <tr>
 <th style="width: 10%">A</th>
@@ -7776,7 +7776,7 @@ unsigned int c = 2, ~c = 4294967293, ~c = 11111111111111111111111111111101
 <td style="color:#228B22;">true</td>
 </tr>
 </table>
-<p>A satisfiability expression with three variables can have $2^3 = 8$ possible combinations of truth values. Below is an example where only one combination is satisfiable. <code>(A AND B AND (NOT C))</code>:</p>
+<p>A satisfiability expression with three variables can have $2^3 = 8$ possible arrangements of truth values. Below is an example where only one permutation is satisfiable. <code>(A AND B AND (NOT C))</code>:</p>
 <table style="font-size: 1.3em; width: 80%;">
 <tr>
 <th style="width: 10%">A</th>
@@ -7948,7 +7948,7 @@ A &amp;&amp; B &amp;&amp; !C = 1
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Implementing-Satisfiability-in-C++">Implementing Satisfiability in C++<a class="anchor-link" href="#Implementing-Satisfiability-in-C++">¶</a></h2><p>The code above showed satisfiability for one combination of variables <code>A=true, B=true, C=false</code>. The program we write should show the result of not just one combination of variables for a given expression, but all combinations and indicating which combinations are satisfiable.</p>
+<h2 id="Implementing-Satisfiability-in-C++">Implementing Satisfiability in C++<a class="anchor-link" href="#Implementing-Satisfiability-in-C++">¶</a></h2><p>The code above showed satisfiability for one arrangement of variables <code>A=true, B=true, C=false</code>. The program we write should show the result of not just one arrangement of variables for a given expression, but all permutations and indicating which are satisfiable.</p>
 <p>In order for our program to determine satisfiability, we should consider how to represent the truth table values in a data structure.</p>
 <ul>
 <li>One option is to use arrays or vectors of booleans to represent the truth table columns. The compare the values at each index to determine the result of the expression.</li>
