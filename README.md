@@ -32,3 +32,8 @@ Run the code snippets in the notebooks by clicking on the cell and pressing Shif
 [Lab 05 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab05/Lab05_Examples.ipynb)
 
 [Lab 05 Examples (Static)](https://latessa.github.io/cpp-labs/Lab05_Examples.html)
+
+## Lab 06 Satisfiability (Implication, Negation, and Equivalence)
+[Lab 06 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab06/Lab06_Examples.ipynb)
+
+[Lab 06 Examples (Static)](https://latessa.github.io/cpp-labs/Lab06_Examples.html)
