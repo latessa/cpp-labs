@@ -7537,7 +7537,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 06, we are limited to these includes.</span>
@@ -7571,7 +7571,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
@@ -7805,7 +7805,7 @@ BITWISE_AND(a, b) = 0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Reviewing-the-Lab-05-Solution">Reviewing the Lab 05 Solution<a class="anchor-link" href="#Reviewing-the-Lab-05-Solution">¶</a></h2><p>Lab 05 used AND, OR, and NOT operations to solve the following problems shown in the code cell below.</p>
+<h2 id="Reviewing-the-Lab-05-Solution">Reviewing the Lab 05 Solution<a class="anchor-link" href="#Reviewing-the-Lab-05-Solution">¶</a></h2><p>Lab 05 used AND, OR, and NOT operations to solve the problems in the solution below.</p>
 </div>
 </div>
 </div>
@@ -7814,7 +7814,7 @@ BITWISE_AND(a, b) = 0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">dec2bitstring</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -7891,13 +7891,65 @@ Problem 5:
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=03b4627b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In C++, you can enter integers as binary literals by using the prefix <code>0b</code> or <code>0B</code>. For example, <code>0b00001111</code> represents the decimal value 15. You can also add a <code>u</code> suffix to indicate that the literal is an <code>unsigned int</code>, such as <code>0b00001111u</code>.</p>
+<p>To improve readability with long binary numbers, you can use the single quote (<code>'</code>) as a bit group separator. For example, <code>0b0101'0101</code> is easier to read and is the same number as <code>0b01010101</code>.</p>
+<p>When you output a binary literal using <code>std::cout</code>, it will display the value in decimal form.</p>
+<p>In Lab 06, consider replacing the decimal syntax (15, 51, and 85) with binary literals to more clearly convey their role as truth table columns.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=83287a5c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-c++"><pre><span></span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fifteen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b00001111u</span><span class="p">;</span><span class="w">                      </span><span class="c1">// 15 in decimal, unsigned</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">negativeOne</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b11111111'11111111'11111111'11111111</span><span class="p">;</span><span class="w"> </span><span class="c1">// -1 in decimal</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"fifteen is "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fifteen</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Output: 15</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"negativeOne is = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">negativeOne</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Output: -1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>fifteen is 15
+negativeOne is = -1
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>@0x75a9ad9fcca0</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da9cfad1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>When looking at the Lab 06 requirements, consider how similarly shaped your solution could be to this Lab 05 implementation.</p>
+<p>When looking at the Lab 06 requirements, consider how similarly shaped your solution could be to the Lab 05 implementation we looked at today.</p>
 <ul>
 <li>What lines would need to change?</li>
 <li>What functionality would need to be added?</li>
