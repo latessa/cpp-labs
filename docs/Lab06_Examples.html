@@ -7537,7 +7537,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 06, we are limited to these includes.</span>
@@ -7560,8 +7560,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Deriving-Logical-Operations-Using-Built-in-Operators">Deriving Logical Operations Using Built-in Operators<a class="anchor-link" href="#Deriving-Logical-Operations-Using-Built-in-Operators">¶</a></h2><p>In last week's lab assignment, we solved logical problems using AND, OR, and NOT operations. This week, we will solve problems using NAND, NOR, XOR, and IMPLIES operations.</p>
-<p>In C++, we have logical operators for the AND (<code>&amp;&amp;</code>), OR (<code>||</code>), and NOT (<code>!</code>) operations. We also have bitwise operators for AND (<code>&amp;</code>), OR (<code>|</code>), XOR (<code>^</code>), and NOT (<code>~</code>) operations. However, we do not have built-in operators for NAND, NOR, and IMPLIES. We can define these operations using functions.</p>
+<h2 id="Deriving-Logical-Operations-Using-Built-in-Operators">Deriving Logical Operations Using Built-in Operators<a class="anchor-link" href="#Deriving-Logical-Operations-Using-Built-in-Operators">¶</a></h2><p>In last week's lab assignment, we solved logical problems using AND, OR, and NOT operations. This week, we will solve problems using NAND, NOR, XOR, XNOR, and IMPLIES operations.</p>
+<p>In C++, we have logical operators for the AND (<code>&amp;&amp;</code>), OR (<code>||</code>), and NOT (<code>!</code>) operations. We also have bitwise operators for AND (<code>&amp;</code>), OR (<code>|</code>), XOR (<code>^</code>), and NOT (<code>~</code>) operations. However, we do not have built-in operators for NAND, NOR, XNOR, and IMPLIES. We can define these operations using functions.</p>
 <p>Instead of using the operator directly, we can call the function to perform the operation.</p>
 </div>
 </div>
@@ -7571,7 +7571,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
@@ -7618,7 +7618,7 @@ BITWISE_AND(a, b) = 0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Deriving-Logical-XOR">Deriving Logical XOR<a class="anchor-link" href="#Deriving-Logical-XOR">¶</a></h3><p>Although C++ provides a built-in bitwise XOR operator (<code>^</code>), there is no direct logical XOR operator. Logical XOR (exclusive OR) returns true if exactly one of its operands is true, and false otherwise. We can derive logical XOR using other logical operators, such as:</p>
+<h3 id="Deriving-Logical-XOR">Deriving Logical XOR<a class="anchor-link" href="#Deriving-Logical-XOR">¶</a></h3><p>Although C++ provides a built-in bitwise XOR operator (<code>^</code>), there is no direct logical XOR operator. Logical XOR (exclusive OR) would return true if exactly one of its operands is true, and false otherwise. We can derive logical XOR using other logical operators, such as:</p>
 <pre><code>a XOR b ≡ (a &amp;&amp; !b) || (!a &amp;&amp; b)
 </code></pre>
 <p>Here is a truth table comparing the bitwise XOR (<code>a ^ b</code>) with the derived logical XOR:</p>
@@ -7711,7 +7711,7 @@ BITWISE_AND(a, b) = 0
 <td>True</td>
 </tr>
 </table>
-<p>We can think of IMPLIES as <code>if</code> condition.  Let's assign <code>a</code> to the proposition <code>it is raining</code> and <code>b</code> to the proposition <code>I go inside.</code></p>
+<p>We can think of IMPLIES as an <code>if</code> condition.  Let's assign <code>a</code> to the proposition <code>it is raining</code> and <code>b</code> to the proposition <code>I go inside.</code></p>
 <ul>
 <li>If it is <code>false</code> that <code>it is raining</code>, and it is <code>false</code> that <code>I go inside</code>, then the claim evaluates to <code>true</code>. (I didn't make any claim about what I do when it's not raining, so it's fine that I didn't go inside. The implication holds.)</li>
 <li>If it is <code>false</code> that <code>it is raining</code>, and it is <code>true</code> that <code>I go inside</code>, then the claim evaluates to <code>true</code>. (Again, I didn't make any claim about what I do when it's not raining, so it's fine that I went inside. The implication holds.)</li>
@@ -7814,7 +7814,7 @@ BITWISE_AND(a, b) = 0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">dec2bitstring</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -7909,7 +7909,7 @@ Problem 5:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fifteen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b00001111u</span><span class="p">;</span><span class="w">                      </span><span class="c1">// 15 in decimal, unsigned</span>
@@ -7935,9 +7935,9 @@ negativeOne is = -1
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>@0x75a9ad9fcca0</pre>
+<pre>@0x76fb155fcca0</pre>
 </div>
 </div>
 </div>
