@@ -37,3 +37,8 @@ Run the code snippets in the notebooks by clicking on the cell and pressing Shif
 [Lab 06 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab06/Lab06_Examples.ipynb)
 
 [Lab 06 Examples (Static)](https://latessa.github.io/cpp-labs/Lab06_Examples.html)
+
+## Lab 07 Summation and Recursion
+[Lab 07 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab07/Lab07_Examples.ipynb)
+
+[Lab 07 Examples (Static)](https://latessa.github.io/cpp-labs/Lab07_Examples.html)
