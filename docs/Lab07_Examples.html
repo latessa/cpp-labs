@@ -7676,6 +7676,9 @@ A <b>stack</b> is a data structure that follows a <b>Last In, First Out (LIFO)</
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>While using recursion for simple tasks like counting down from a given number is possible, it's not the most suitable approach. Here a loop would be simpler. But there are problems that are more inherently recursive, and for such problems, the recursive solution can be the simpler and more elegant one.</p>
 <p>Finding the nth Fibonacci number is a classic example of a problem that can be solved recursively, and in which the recursive solution is often more concise than the iterative one.</p>
+<h2 id="The-Fibonacci-Sequence">The Fibonacci Sequence<a class="anchor-link" href="#The-Fibonacci-Sequence">¶</a></h2><p>The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. The sequence typically begins as follows:</p>
+<p>$$0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...$$</p>
+<p>$f(0) = 0$ and $f(1) = 1$ are the defined base cases.</p>
 <p>We will now step through the recursive Fibonacci function as it calculates the 4th Fibonacci number. We will take note of each recursive call, as it is pushed onto and popped off the call stack.</p>
 </div>
 </div>
