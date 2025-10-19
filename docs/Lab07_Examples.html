@@ -7540,7 +7540,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 07, we are limited to &lt;iostream&gt; and &lt;string&gt;</span>
+<div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 07, we are limited to using only &lt;iostream&gt;</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </pre></div>
@@ -7555,11 +7555,11 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="An-Overview-of-Today's-Lab">An Overview of Today's Lab<a class="anchor-link" href="#An-Overview-of-Today's-Lab">¶</a></h2><p>Today lab will involve implementing four functions.</p>
+<h2 id="An-Overview-of-Today's-Lab">An Overview of Today's Lab<a class="anchor-link" href="#An-Overview-of-Today's-Lab">¶</a></h2><p>Today's lab will involve implementing four functions.</p>
 <ul>
 <li>The first is a summation that will be calculated using a formula.</li>
 <li>The second will perform the same summation using iteration (a loop).</li>
-<li>The third will perform the same summation using a recursive function.</li>
+<li>The third will perform the same summation using recursion.</li>
 <li>The fourth will be a recursive function to calculate the nth Fibonacci number. We will look at this function in detail in these notes, so the point is for you to understand the recursion rather than to reinvent how it works on your own.</li>
 </ul>
 </div>
@@ -7574,7 +7574,8 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Recursion">Recursion<a class="anchor-link" href="#Recursion">¶</a></h2><p>A recursive function is a function that calls itself. Like iteration (using loops), recursion allows for repeating a set of instructions multiple times. And while recursion can be used for mere repetition, it is often better suited for problems that can be broken down into smaller instances of the same problem.</p>
 <p>Just a loop can be infinite if the exit condition is never met, a recursive function can also be infinite if there is NO <code>base case</code> to stop the recursion.</p>
-<div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"This loop will run forever!"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -7583,11 +7584,11 @@ a.anchor-link {
 <span class="w">    </span><span class="n">infiniteRecursion</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
-<p>While the loop will continue until the program is manually interrupted, the recursive function eventually produce a stack overflow error when the program runs out of memory to store the function calls.</p>
+<p>While the loop will continue until the program is manually interrupted, the recursive function eventually produce a stack overflow error when the program runs out of memory to store the function calls. Whenever a function is called, a new frame is added to the call stack to manage the function's parameters and local variables. Since there's no <code>base case</code> in which the function will end without again calling itself, the stack keeps growing until its memory limit is reached.</p>
 <p>A recursive function will therefore typically have two main components:</p>
 <ol>
 <li>A <code>recursive case</code> that breaks the problem down into smaller instances of itself.</li>
-<li>A <code>base case</code> that stops the recursion.</li>
+<li>A <code>base case</code> that stops the recursion, allowing the call stack to unwind.</li>
 </ol>
 <p>Here is a recursive function that counts down from a given number to zero:</p>
 </div>
@@ -7598,7 +7599,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -7622,7 +7623,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>input_line_13:4:10: error: no member named 'cout' in namespace 'std'
+<pre>input_line_17:4:10: error: no member named 'cout' in namespace 'std'
     std::cout &lt;&lt; n &lt;&lt; std::endl;
     ~~~~~^
 </pre>
