@@ -7537,7 +7537,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 07, we are limited to using only &lt;iostream&gt;</span>
@@ -7566,6 +7566,31 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb24bc22">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Summation">Summation<a class="anchor-link" href="#Summation">¶</a></h2><p>Given a non-negative integer n, we want the sum of the first n natural numbers:
+$$S(n)=\sum_{k=1}^{n} k$$</p>
+<h3 id="The-formula-for-this-summation-is:">The formula for this summation is:<a class="anchor-link" href="#The-formula-for-this-summation-is:">¶</a></h3><p>$$S(n) = \frac{n(n + 1)}{2}$$</p>
+<h4 id="Examples">Examples<a class="anchor-link" href="#Examples">¶</a></h4><p>$$S(5) = \frac{5(5 + 1)}{2} = 15$$
+<br/><br/>
+$$S(4) = \frac{4(4 + 1)}{2} = 10$$
+<br/><br/>
+$$S(1) = \frac{1(1 + 1)}{2} = 1$$</p>
+<h3 id="Iterative-approach">Iterative approach<a class="anchor-link" href="#Iterative-approach">¶</a></h3><ul>
+<li>Accumulate the sum by looping from <code>1</code> to <code>n</code>.</li>
+<li>Unlike the formula, which is a constant time operation <code>O(1)</code>, this approach takes linear time <code>O(n)</code>. Regardless of the number being calculated, the formula will take the same amount of time. The loop, however, will take longer as <code>n</code> increases.</li>
+</ul>
+<h4 id="Examples">Examples<a class="anchor-link" href="#Examples">¶</a></h4><p>$$S(5) = 1 + 2 + 3 + 4 + 5 = 15$$
+$$S(4) = 1 + 2 + 3 + 4 = 10$$
+$$S(1) = 1$$</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fc595779">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7584,7 +7609,11 @@ a.anchor-link {
 <span class="w">    </span><span class="n">infiniteRecursion</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
-<p>While the loop will continue until the program is manually interrupted, the recursive function eventually produce a stack overflow error when the program runs out of memory to store the function calls. Whenever a function is called, a new frame is added to the call stack to manage the function's parameters and local variables. Since there's no <code>base case</code> in which the function will end without again calling itself, the stack keeps growing until its memory limit is reached.</p>
+<p>While the loop will continue until the program is manually interrupted, the recursive function eventually produce a stack overflow error when the program runs out of memory to store the function calls. Whenever a function is called, a new frame is added to the call <code>stack</code> to manage the function's parameters and local variables. Since there's no <code>base case</code> in which the function will end without again calling itself, the <code>stack</code> keeps growing until its memory limit is reached.</p>
+<div style="background-color: #f5f5f5; color: #222; padding: 10px; border-radius: 6px;">
+A <b>stack</b> is a data structure that follows a <b>Last In, First Out (LIFO)</b> order. When an item is added to the <b>stack</b>, it is <em>pushed</em> onto the top. When an item is removed, it is <em>popped</em> from the top. This can be visualized as a stack of cafeteria trays. When a new tray is added to the stack of trays, it is set on top of the existing trays. When a tray is removed, it is removed from the top.
+</div>
+<br/>
 <p>A recursive function will therefore typically have two main components:</p>
 <ol>
 <li>A <code>recursive case</code> that breaks the problem down into smaller instances of itself.</li>
@@ -7599,7 +7628,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -7622,18 +7651,18 @@ a.anchor-link {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>input_line_7:4:10: error: no member named 'cout' in namespace 'std'
-    std::cout &lt;&lt; n &lt;&lt; std::endl;
-    ~~~~~^
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>10
+9
+8
+7
+6
+5
+4
+3
+2
+1
 </pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-Interpreter Error: </pre>
 </div>
 </div>
 </div>
@@ -7652,18 +7681,42 @@ Interpreter Error: </pre>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b5a4dbda">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=80bec559">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>from IPython.display import HTML</p>
-<p>HTML("""</p>
-<iframe height="500" src="https://latessa.github.io/cpp-labs/slides/Lab07/fib_slides.pdf" width="800"></iframe>
-""")
-
-
+<h2 id="Recursive-Fibonacci-Function-Call-Stack-Visualization">Recursive Fibonacci Function Call Stack Visualization<a class="anchor-link" href="#Recursive-Fibonacci-Function-Call-Stack-Visualization">¶</a></h2><p><a href="https://latessa.github.io/cpp-labs/slides/Lab07/fib_slides.pdf">Recursive Fibonacci Function Call Stack Visualization (PDF)</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1c3a038e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><img alt="Fibonacci(n)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_02.png"/></p>
+<p><img alt="Fibonacci(4)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_03.png"/></p>
+<p><img alt="Fibonacci(3)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_04.png"/></p>
+<p><img alt="Fibonacci(2)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_05.png"/></p>
+<p><img alt="Fibonacci(1)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_06.png"/></p>
+<p><img alt="Fibonacci(2)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_07.png"/></p>
+<p><img alt="Fibonacci(0)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_08.png"/></p>
+<p><img alt="Fibonacci(2)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_09.png"/></p>
+<p><img alt="Fibonacci(3)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_10.png"/></p>
+<p><img alt="Fibonacci(1)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_11.png"/></p>
+<p><img alt="Fibonacci(3)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_12.png"/></p>
+<p><img alt="Fibonacci(4)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_13.png"/></p>
+<p><img alt="Fibonacci(2)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_14.png"/></p>
+<p><img alt="Fibonacci(1)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_15.png"/></p>
+<p><img alt="Fibonacci(2)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_16.png"/></p>
+<p><img alt="Fibonacci(0)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_17.png"/></p>
+<p><img alt="Fibonacci(2)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_18.png"/></p>
+<p><img alt="Fibonacci(4)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_19.png"/></p>
+<p><img alt="Fibonacci(n)" src="https://latessa.github.io/cpp-labs/images/Lab07/fib_slides_20.png"/></p>
 </div>
 </div>
 </div>
