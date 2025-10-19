@@ -7599,7 +7599,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -7623,7 +7623,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>input_line_17:4:10: error: no member named 'cout' in namespace 'std'
+<pre>input_line_7:4:10: error: no member named 'cout' in namespace 'std'
     std::cout &lt;&lt; n &lt;&lt; std::endl;
     ~~~~~^
 </pre>
@@ -7639,349 +7639,27 @@ Interpreter Error: </pre>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d7a8c35a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=262afe32">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Deriving-Logical-XOR">Deriving Logical XOR<a class="anchor-link" href="#Deriving-Logical-XOR">¶</a></h3><p>Although C++ provides a built-in bitwise XOR operator (<code>^</code>), there is no direct logical XOR operator. Logical XOR (exclusive OR) would return true if exactly one of its operands is true, and false otherwise. We can derive logical XOR using other logical operators, such as:</p>
-<pre><code>a XOR b ≡ (a &amp;&amp; !b) || (!a &amp;&amp; b)
-</code></pre>
-<p>Here is a truth table comparing the bitwise XOR (<code>a ^ b</code>) with the derived logical XOR:</p>
-<table style="font-size: 1.3em; width: 100%;">
-<tr>
-<th>a</th>
-<th>b</th>
-<th>a ^ b (bitwise)</th>
-<th>!a</th>
-<th>!b</th>
-<th>(a &amp;&amp; !b)</th>
-<th>(!a &amp;&amp; b)</th>
-<th>Logical XOR<br/>(a &amp;&amp; !b) || (!a &amp;&amp; b)</th>
-</tr>
-<tr>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr>
-<td>False</td>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-<td>True</td>
-</tr>
-<tr>
-<td>True</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-<td>True</td>
-<td>True</td>
-<td>False</td>
-<td>True</td>
-</tr>
-<tr>
-<td>True</td>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-</table></div>
+<p>While using recursion for simple tasks like counting down from a given number is possible, it's not the most suitable approach. Here a loop would be simpler. But there are problems that are more inherently recursive, and for such problems, the recursive solution can be the simpler and more elegant one.</p>
+<p>Finding the nth Fibonacci number is a classic example of a problem that can be solved recursively, and in which the recursive solution is often more concise than the iterative one.</p>
+<p>We will now step through the recursive Fibonacci function as it calculates the 4th Fibonacci number. We will take note of each recursive call, as it is pushed onto and popped off the call stack.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e2bfa80e">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b5a4dbda">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Deriving-IMPLIES">Deriving IMPLIES<a class="anchor-link" href="#Deriving-IMPLIES">¶</a></h3><p>C++ doesn't provide a built-in operator for IMPLIES. To derive IMPLIES using other operators, let's first look at the IMPLIES truth table:</p>
-<table style="font-size: 1.3em; width: 60%;">
-<tr>
-<th>a</th>
-<th>b</th>
-<th>a IMPLIES b</th>
-</tr>
-<tr>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-</tr>
-<tr>
-<td>False</td>
-<td>True</td>
-<td>True</td>
-</tr>
-<tr>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-</tr>
-</table>
-<p>We can think of IMPLIES as an <code>if</code> condition.  Let's assign <code>a</code> to the proposition <code>it is raining</code> and <code>b</code> to the proposition <code>I go inside.</code></p>
-<ul>
-<li>If it is <code>false</code> that <code>it is raining</code>, and it is <code>false</code> that <code>I go inside</code>, then the claim evaluates to <code>true</code>. (I didn't make any claim about what I do when it's not raining, so it's fine that I didn't go inside. The implication holds.)</li>
-<li>If it is <code>false</code> that <code>it is raining</code>, and it is <code>true</code> that <code>I go inside</code>, then the claim evaluates to <code>true</code>. (Again, I didn't make any claim about what I do when it's not raining, so it's fine that I went inside. The implication holds.)</li>
-<li>If it is <code>true</code> that <code>it is raining</code>, but it is <code>false</code> that <code>I go inside</code>, then the claim evaluates to <code>false</code>.</li>
-<li>If it is <code>true</code> that <code>it is raining</code>, and it is <code>true</code> that <code>I go inside</code>, then the claim evaluates to true.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a6cbfdf4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Using-Equivalence-to-Implement-IMPLIES-in-C++">Using Equivalence to Implement IMPLIES in C++<a class="anchor-link" href="#Using-Equivalence-to-Implement-IMPLIES-in-C++">¶</a></h3><p>Our textbook shows us many equivalences.<br>
-<em>Discrete Mathematics and Its Applications</em> by Kenneth H. Rosen.</br></p>
-<p><img alt="Equivalence" src="https://latessa.github.io/cpp-labs/images/Lab06/logical_equivalences.png"/></p>
-<p><img alt="Equivalence for Conditional Statements" src="https://latessa.github.io/cpp-labs/images/Lab06/logical_equivalences_conditional.png"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=817950b9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The first row of <strong>Table 7</strong> shows that <code>p IMPLIES q</code> is equivalent to <code>NOT p OR q</code>.</p>
-<p>We can implement IMPLIES using this equivalence.</p>
-<pre><code>a IMPLIES b ≡ (~a | b)
-</code></pre>
-<p>Remember that <code>!</code> and <code>~</code> are both NOT operators. <code>!</code> is logical NOT, and <code>~</code> is bitwise NOT.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cfe63a79-34c7-431e-82e4-0746d732eae4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here is a truth table comparing IMPLIES with the derived programmable expression:</p>
-<table style="font-size: 1.3em; width: 80%;">
-<tr>
-<th>a</th>
-<th>b</th>
-<th>a IMPLIES b</th>
-<th>~a</th>
-<th>(~a | b)</th>
-</tr>
-<tr>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-</tr>
-<tr>
-<td>False</td>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-</tr>
-<tr>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-<td>False</td>
-<td>True</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a8aa667a-5901-43f9-beb7-82a95959b2d4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Reviewing-the-Lab-05-Solution">Reviewing the Lab 05 Solution<a class="anchor-link" href="#Reviewing-the-Lab-05-Solution">¶</a></h2><p>Lab 05 used AND, OR, and NOT operations to solve the problems in the solution below.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=69f3718f-8d67-4843-8744-670c51fc66e7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-c++"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">dec2bitstring</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"00000000"</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sc">'1'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="sc">'0'</span><span class="p">;</span>
-<span class="w">        </span><span class="n">num</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// main function</span>
-<span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w"> </span><span class="c1">// base2 = 00001111</span>
-<span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">51</span><span class="p">;</span><span class="w"> </span><span class="c1">// base2 = 00110011</span>
-<span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">85</span><span class="p">;</span><span class="w"> </span><span class="c1">// base2 = 01010101</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Example Problem (from last week): "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// expected: 00000010</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">p0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(((</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">B</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">C</span><span class="p">))</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">~</span><span class="p">(</span><span class="n">B</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">C</span><span class="p">));</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dec2bitstring</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Problem 1: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// expected: 00000111</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">C</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dec2bitstring</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Problem 2: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// expected: 00000000</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">C</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">B</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">~</span><span class="n">C</span><span class="p">);</span><span class="w"> </span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dec2bitstring</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Problem 3: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// expected: 00001000</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">~</span><span class="p">(</span><span class="n">B</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">C</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dec2bitstring</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Problem 4: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// expected: 00000000</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">p4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">B</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">C</span><span class="p">))</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">~</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">~</span><span class="n">B</span><span class="p">);</span><span class="w"> </span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dec2bitstring</span><span class="p">(</span><span class="n">p4</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Problem 5: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// expected: 00000000</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">p5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">B</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">C</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">))</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">C</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dec2bitstring</span><span class="p">(</span><span class="n">p5</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Example Problem (from last week): 
-00000010
-
-Problem 1: 
-00000111
-
-Problem 2: 
-00000000
-
-Problem 3: 
-00001000
-
-Problem 4: 
-00000000
-
-Problem 5: 
-00000000
-
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=03b4627b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In C++, you can enter integers as binary literals by using the prefix <code>0b</code> or <code>0B</code>. For example, <code>0b00001111</code> represents the decimal value 15. You can also add a <code>u</code> suffix to indicate that the literal is an <code>unsigned int</code>, such as <code>0b00001111u</code>.</p>
-<p>To improve readability with long binary numbers, you can use the single quote (<code>'</code>) as a bit group separator. For example, <code>0b0101'0101</code> is easier to read and is the same number as <code>0b01010101</code>.</p>
-<p>When you output a binary literal using <code>std::cout</code>, it will display the value in decimal form.</p>
-<p>In Lab 06, consider replacing the decimal syntax (15, 51, and 85) with binary literals to more clearly convey their role as truth table columns.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=83287a5c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-c++"><pre><span></span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fifteen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b00001111u</span><span class="p">;</span><span class="w">                      </span><span class="c1">// 15 in decimal, unsigned</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">negativeOne</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b11111111'11111111'11111111'11111111</span><span class="p">;</span><span class="w"> </span><span class="c1">// -1 in decimal</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"fifteen is "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fifteen</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Output: 15</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"negativeOne is = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">negativeOne</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Output: -1</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>fifteen is 15
-negativeOne is = -1
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>@0x76fb155fcca0</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da9cfad1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>When looking at the Lab 06 requirements, consider how similarly shaped your solution could be to the Lab 05 implementation we looked at today.</p>
-<ul>
-<li>What lines would need to change?</li>
-<li>What functionality would need to be added?</li>
-</ul>
-<p>Today's lab should be quite short to implement if you start with and modify the Lab 05 solution. The <em>.cpp</em> file is available on Canvas in last week's module.</p>
+<p>from IPython.display import IFrame</p>
+<p>IFrame("<a href="https://latessa.github.io/cpp-labs/slides/Lab07/fib_slides.pdf">https://latessa.github.io/cpp-labs/slides/Lab07/fib_slides.pdf</a>", width=800, height=500)</p>
 </div>
 </div>
 </div>
