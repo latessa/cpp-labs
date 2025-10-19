@@ -7599,7 +7599,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -7658,8 +7658,12 @@ Interpreter Error: </pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>from IPython.display import IFrame</p>
-<p>IFrame("<a href="https://latessa.github.io/cpp-labs/slides/Lab07/fib_slides.pdf">https://latessa.github.io/cpp-labs/slides/Lab07/fib_slides.pdf</a>", width=800, height=500)</p>
+<p>from IPython.display import HTML</p>
+<p>HTML("""</p>
+<iframe height="500" src="https://latessa.github.io/cpp-labs/slides/Lab07/fib_slides.pdf" width="800"></iframe>
+""")
+
+
 </div>
 </div>
 </div>
