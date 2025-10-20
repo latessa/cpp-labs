@@ -7537,7 +7537,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 07, we are limited to using only &lt;iostream&gt;</span>
@@ -7572,7 +7572,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Summation">Summation<a class="anchor-link" href="#Summation">¶</a></h2><p>Given a non-negative integer n, we want the sum of the first n natural numbers:
+<h2 id="Summation">Summation<a class="anchor-link" href="#Summation">¶</a></h2><p>Given a positive integer n, we want the sum of the first n natural numbers:
 $$S(n)=\sum_{k=1}^{n} k$$</p>
 <h3 id="The-formula-for-this-summation-is:">The formula for this summation is:<a class="anchor-link" href="#The-formula-for-this-summation-is:">¶</a></h3><p>$$S(n) = \frac{n(n + 1)}{2}$$</p>
 <h4 id="Examples">Examples<a class="anchor-link" href="#Examples">¶</a></h4><p>$$S(5) = \frac{5(5 + 1)}{2} = 15$$
@@ -7598,7 +7598,7 @@ $$S(1) = 1$$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Recursion">Recursion<a class="anchor-link" href="#Recursion">¶</a></h2><p>A recursive function is a function that calls itself. Like iteration (using loops), recursion allows for repeating a set of instructions multiple times. And while recursion can be used for mere repetition, it is often better suited for problems that can be broken down into smaller instances of the same problem.</p>
-<p>Just a loop can be infinite if the exit condition is never met, a recursive function can also be infinite if there is NO <code>base case</code> to stop the recursion.</p>
+<p>Just as a loop can be infinite if the exit condition is never met, a recursive function can also be infinite if there is no <code>base case</code> to stop the recursion.</p>
 <div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"This loop will run forever!"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -7609,7 +7609,7 @@ $$S(1) = 1$$</p>
 <span class="w">    </span><span class="n">infiniteRecursion</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
-<p>While the loop will continue until the program is manually interrupted, the recursive function eventually produce a stack overflow error when the program runs out of memory to store the function calls. Whenever a function is called, a new frame is added to the call <code>stack</code> to manage the function's parameters and local variables. Since there's no <code>base case</code> in which the function will end without again calling itself, the <code>stack</code> keeps growing until its memory limit is reached.</p>
+<p>While the loop will continue until the program is manually interrupted, the recursive function will eventually produce a stack overflow error when the program runs out of memory to store the function calls. Whenever a function is called, a new frame is added to the call <code>stack</code> to manage the function's parameters and local variables. Since there's no <code>base case</code> in which the function will end without again calling itself, the <code>stack</code> keeps growing until its memory capacity is reached.</p>
 <div style="background-color: #f5f5f5; color: #222; padding: 10px; border-radius: 6px;">
 A <b>stack</b> is a data structure that follows a <b>Last In, First Out (LIFO)</b> order. When an item is added to the <b>stack</b>, it is <em>pushed</em> onto the top. When an item is removed, it is <em>popped</em> from the top. This can be visualized as a stack of cafeteria trays. When a new tray is added to the stack of trays, it is set on top of the existing trays. When a tray is removed, it is removed from the top.
 </div>
@@ -7628,7 +7628,7 @@ A <b>stack</b> is a data structure that follows a <b>Last In, First Out (LIFO)</
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
