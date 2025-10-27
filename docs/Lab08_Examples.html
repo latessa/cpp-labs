@@ -7540,7 +7540,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 07, we are limited to using only &lt;iostream&gt; and &lt;string&gt;</span>
+<div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 08, we are limited to using only &lt;iostream&gt; and &lt;string&gt;</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
@@ -7632,13 +7632,36 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Euclid's-Algorithm">Euclid's Algorithm<a class="anchor-link" href="#Euclid's-Algorithm">¶</a></h2><p>The <strong>greatest common divisor (GCD)</strong> of two integers is the largest positive integer that divides both numbers without leaving a remainder.</p>
 <h3 id="Example:-GCD-of-8-and-12">Example: GCD of 8 and 12<a class="anchor-link" href="#Example:-GCD-of-8-and-12">¶</a></h3><p>We want to find the GCD of <code>8</code> and <code>12</code>. Let's check which numbers divide both:</p>
-<ul>
-<li>12 ÷ 8 = 1 remainder 4</li>
-<li>12 ÷ 7 = 1 remainder 5</li>
-<li>12 ÷ 6 = 2 remainder 0</li>
-<li>12 ÷ 5 = 2 remainder 2</li>
-<li>12 ÷ 4 = 3 remainder 0</li>
-</ul>
+<table style="font-size: 1.3em; width: 80%; text-align: center;">
+<thead>
+<tr>
+<th>Check 12 ÷ d</th>
+<th>Check 8 ÷ d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12 ÷ 8 = 1 remainder 4</td>
+<td>8 ÷ 8 = 1 remainder 0</td>
+</tr>
+<tr>
+<td>12 ÷ 7 = 1 remainder 5</td>
+<td>8 ÷ 7 = 1 remainder 1</td>
+</tr>
+<tr>
+<td>12 ÷ 6 = 2 remainder 0</td>
+<td>8 ÷ 6 = 1 remainder 2</td>
+</tr>
+<tr>
+<td>12 ÷ 5 = 2 remainder 2</td>
+<td>8 ÷ 5 = 1 remainder 3</td>
+</tr>
+<tr>
+<td>12 ÷ 4 = 3 remainder 0</td>
+<td>8 ÷ 4 = 2 remainder 0</td>
+</tr>
+</tbody>
+</table>
 <p>The largest number that divides both is <strong>4</strong>.</p>
 <p>Instead of checking all divisors, we can use the <strong>Euclidean algorithm</strong>:</p>
 <ul>
