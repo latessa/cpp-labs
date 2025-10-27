@@ -42,3 +42,8 @@ Run the code snippets in the notebooks by clicking on the cell and pressing Shif
 [Lab 07 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab07/Lab07_Examples.ipynb)
 
 [Lab 07 Examples (Static)](https://latessa.github.io/cpp-labs/Lab07_Examples.html)
+
+## Lab 08 Sieve of Eratosthenes and Euclid's Algorithm
+[Lab 08 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab08/Lab08_Examples.ipynb)
+
+[Lab 08 Examples (Static)](https://latessa.github.io/cpp-labs/Lab08_Examples.html)
