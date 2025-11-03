@@ -7575,15 +7575,13 @@ We will then look at the Divide and Conquer approach to multiplication because a
 <li>Addition: $\mathcal{O}(n)$ — linear time.</li>
 <li>Multiplication (grade‑school): $\mathcal{O}(n^2)$ — quadratic time (each digit of one operand is multiplied by each digit of the other).</li>
 </ul>
-<h3 id="Addition">Addition<a class="anchor-link" href="#Addition">¶</a></h3><pre><code class="language-txt">txt
-  2518
+<h3 id="Addition">Addition<a class="anchor-link" href="#Addition">¶</a></h3><div class="highlight"><pre><span></span>  2518
 + 3841
   ----
   6359
-</code></pre>
+</pre></div>
 <p>The number of single-digit additions is linear to the number of digits $n$. We could iterate over the digits from right to left, and a single loop would execute $n$ times. Even if there is a carry, it only requires a constant amount of extra work per digit, so the loop doesn't have to repeat any extra times. Addition can be performed in a single pass over the length.</p>
-<h3 id="Multiplication-(elementary-school)">Multiplication (elementary school)<a class="anchor-link" href="#Multiplication-(elementary-school)">¶</a></h3><pre><code class="language-txt">txt
-      2518
+<h3 id="Multiplication-(elementary-school)">Multiplication (elementary school)<a class="anchor-link" href="#Multiplication-(elementary-school)">¶</a></h3><div class="highlight"><pre><span></span>      2518
     x 3841
     ------
       2518
@@ -7592,7 +7590,7 @@ We will then look at the Divide and Conquer approach to multiplication because a
    7554   
 ----------
    9671638
-</code></pre>
+</pre></div>
 <p>The number of single-digit multiplications is quadratic to the number of digits $n$. Each digit of one operand is multiplied by each digit of the other operand. If each operand has $n$ digits, there are $n \times n = n^2$ single-digit multiplications. Thus, the running time is $\mathcal{O}(n^2)$. If writing a program, nested loops would be used to multiply each digit of both operands.</p>
 <p>Addition is also involved in multiplication, but because addition is asymptotically faster, the multiplication step dominates the overall running time, resulting in a total time complexity of $\mathcal{O}(n^2)$ instead of $\mathcal{O}(n^2 + n) = \mathcal{O}(n^2)$.</p>
 <h3 id="A-Number-of-Length-4">A Number of Length 4<a class="anchor-link" href="#A-Number-of-Length-4">¶</a></h3><p>For numbers of length <code>4</code>, multiplication will require up to <code>16</code> single-digit multiplications ($4^2$). Addition will require up to <code>4</code> single-digit additions.  As $n$ increases, the difference becomes even more impactful.</p>
@@ -7626,15 +7624,14 @@ We will then look at the Divide and Conquer approach to multiplication because a
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Setting-Up-the-Problem">Setting Up the Problem<a class="anchor-link" href="#Setting-Up-the-Problem">¶</a></h3><p>Let's multiply two 4-digit numbers, <code>1203</code> times <code>4536</code>. Using our alternate representation, we can name each half of each number.  Let's refer to <code>1203</code> as <code>A</code> and <code>4536</code> as <code>B</code>. Let's refer to the left half of <code>A</code> as <code>AL</code> and the right half as <code>AR</code>. Similarly, let's refer to the left half of <code>B</code> as <code>BL</code> and the right half as <code>BR</code>.</p>
-<pre><code class="language-txt">txt
-    AL  AR
+<div class="highlight"><pre><span></span>    AL  AR
     12  03
 
     BL  BR
     45  36
 
     LENGTH n = 4
-</code></pre>
+</pre></div>
 <p>In base 10, we can express the multiplication of <code>A</code> and <code>B</code> as:</p>
 <p>$$ (AL * 10^{\frac{n}{2}} + AR * 10^0) * (BL * 10^{\frac{n}{2}} + BR * 10^0) $$</p>
 </div>
