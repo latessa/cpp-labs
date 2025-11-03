@@ -7625,13 +7625,13 @@ We will then look at the Divide and Conquer approach to multiplication because a
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Setting-Up-the-Problem">Setting Up the Problem<a class="anchor-link" href="#Setting-Up-the-Problem">¶</a></h3><p>Let's multiply two 4-digit numbers, <code>1984</code> times <code>2135</code>. Using our alternate representation, we can name each half of each number.  Let's refer to <code>1984</code> as <code>A</code> and <code>2135</code> as <code>B</code>. Let's refer to the left half of <code>A</code> as <code>AL</code> and the right half as <code>AR</code>. Similarly, let's refer to the left half of <code>B</code> as <code>BL</code> and the right half as <code>BR</code>.</p>
+<h3 id="Setting-Up-the-Problem">Setting Up the Problem<a class="anchor-link" href="#Setting-Up-the-Problem">¶</a></h3><p>Let's multiply two 4-digit numbers, <code>1203</code> times <code>4536</code>. Using our alternate representation, we can name each half of each number.  Let's refer to <code>1203</code> as <code>A</code> and <code>4536</code> as <code>B</code>. Let's refer to the left half of <code>A</code> as <code>AL</code> and the right half as <code>AR</code>. Similarly, let's refer to the left half of <code>B</code> as <code>BL</code> and the right half as <code>BR</code>.</p>
 <pre><code class="language-txt">txt
-    AL  BR
-    19  84
+    AL  AR
+    12  03
 
     BL  BR
-    21  35
+    45  36
 
     LENGTH n = 4
 </code></pre>
@@ -7659,10 +7659,10 @@ We will then look at the Divide and Conquer approach to multiplication because a
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>$$ C_{LL} = (AL * BL) = (19 * 21) = 0399 $$
-$$ C_{LR} = (AL * BR) = (19 * 35) = 0665 $$
-$$ C_{RL} = (AR * BL) = (84 * 21) = 1764 $$
-$$ C_{RR} = (AR * BR) = (84 * 35) = 2940 $$</p>
+<p>$$ C_{2}  = (AL * BL) = (12 * 45) = 540 $$
+$$ C_{1A} = (AL * BR) = (12 * 36) = 432 $$
+$$ C_{1B} = (AR * BL) = (03 * 45) = 135 $$
+$$ C_{0}  = (AR * BR) = (03 * 36) = 108 $$</p>
 </div>
 </div>
 </div>
@@ -7676,12 +7676,12 @@ $$ C_{RR} = (AR * BR) = (84 * 35) = 2940 $$</p>
 <p>Append the appropriate number of zeros (i.e., multiply by the appropriate power of 10) to each of these four products and then add them together to get the final result.  This is where bit shifts would be used in binary.</p>
 <p>$$
 \begin{aligned}
-C_{LL}10^{n} &amp;\;+\; &amp; (C_{LR} + C_{RL})10^{\frac{n}{2}} &amp;\;+\; &amp; C_{RR}10^{0} \\
-(0399)10^{4} &amp;\;+\; &amp; (0665 + 1764)10^{2} &amp;\;+\; &amp; (2940)10^{0} \\
-3990000 &amp;\;+\; &amp; 242900 &amp;\;+\; &amp; 2940 \\
+C_{2}10^{n} &amp;\;+\; &amp; C_{1A}10^{\frac{n}{2}} &amp;\;+\; &amp;  C_{1B}10^{\frac{n}{2}} &amp;\;+\; &amp; C_{0}10^{0} \\
+(540)10^{4} &amp;\;+\; &amp; (432)10^{2} &amp;\;+\; &amp; (135)10^{2} &amp;\;+\; &amp; (108)10^{0} \\
+5400000 &amp;\;+\; &amp; 43200 &amp;\;+\; &amp; 13500 &amp;\;+\; &amp; 108 \\
 \end{aligned}
 $$</p>
-<p>$$ = 4,235,840 $$</p>
+<p>$$ = 5,456,808 $$</p>
 </div>
 </div>
 </div>
@@ -7703,37 +7703,151 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-Recursive-Pseudocode">The Recursive Pseudocode<a class="anchor-link" href="#The-Recursive-Pseudocode">¶</a></h2><div class="highlight"><pre><span></span><span class="n">function</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="o">:</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span><span class="w">  </span><span class="c1">// base case: single-digit multiplication</span>
+<h2 id="The-Recursive-Pseudocode-(Basic-Divide-&amp;-Conquer)">The Recursive Pseudocode (Basic Divide &amp; Conquer)<a class="anchor-link" href="#The-Recursive-Pseudocode-(Basic-Divide-&amp;-Conquer)">¶</a></h2><div class="highlight"><pre><span></span><span class="n">function</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="o">:</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">single</span><span class="o">-</span><span class="n">digit</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">single</span><span class="o">-</span><span class="n">digit</span><span class="o">:</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="n">B</span><span class="w">  </span><span class="c1">// This is the base case (multiplying single-digit numbers)</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Prepare for the recursive steps by determining the half-length.</span>
 <span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">A</span><span class="p">),</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
 <span class="w">    </span><span class="n">half_n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span>
 
-<span class="w">    </span><span class="c1">// Split A and B into left and right halves</span>
-<span class="w">    </span><span class="n">AL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">A</span>
-<span class="w">    </span><span class="n">AR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">low</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">A</span>
-<span class="w">    </span><span class="n">BL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">B</span>
-<span class="w">    </span><span class="n">BR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">low</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">B</span>
+<span class="w">    </span><span class="c1">// Split A and B into their respective halves. Assign each half to a variable.</span>
+<span class="w">    </span><span class="n">AL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">A</span>
+<span class="w">    </span><span class="n">AR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">A</span>
+<span class="w">    </span><span class="n">BL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">B</span>
+<span class="w">    </span><span class="n">BR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">B</span>
 
-<span class="w">    </span><span class="c1">// 4 recursive calls to multiply the halves</span>
-<span class="w">    </span><span class="n">C_LL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="n">AL</span><span class="p">,</span><span class="w"> </span><span class="n">BL</span><span class="p">)</span>
-<span class="w">    </span><span class="n">C_LR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="n">AL</span><span class="p">,</span><span class="w"> </span><span class="n">BR</span><span class="p">)</span>
-<span class="w">    </span><span class="n">C_RL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="n">AR</span><span class="p">,</span><span class="w"> </span><span class="n">BL</span><span class="p">)</span>
-<span class="w">    </span><span class="n">C_RR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="n">AR</span><span class="p">,</span><span class="w"> </span><span class="n">BR</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="c1">// Recursively call the multiply function, passing the appropriate</span>
+<span class="w">    </span><span class="c1">// parameters for the FOIL components.</span>
+<span class="w">    </span><span class="c1">// (AL * BL), (AL * BR), (AR * BL), (AR * BR)</span>
+<span class="w">    </span><span class="c1">//  FIRSTS     OUTERS     INNERS      LASTS</span>
+<span class="w">    </span><span class="n">C2</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="n">AL</span><span class="p">,</span><span class="w"> </span><span class="n">BL</span><span class="p">)</span><span class="w"> </span><span class="c1">// FIRSTS</span>
+<span class="w">    </span><span class="n">C1A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="n">AL</span><span class="p">,</span><span class="w"> </span><span class="n">BR</span><span class="p">)</span><span class="w"> </span><span class="c1">// OUTERS</span>
+<span class="w">    </span><span class="n">C1B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="n">AR</span><span class="p">,</span><span class="w"> </span><span class="n">BL</span><span class="p">)</span><span class="w"> </span><span class="c1">// INNERS</span>
+<span class="w">    </span><span class="n">C0</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="n">AR</span><span class="p">,</span><span class="w"> </span><span class="n">BR</span><span class="p">)</span><span class="w"> </span><span class="c1">// LASTS</span>
 
-<span class="w">    </span><span class="c1">// Combine the results and adjust by powers of 10</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">C_LL</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="n">C_LR</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C_RL</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C_RR</span>
+<span class="w">    </span><span class="c1">// Calculate the addition part using the results from the recursive</span>
+<span class="w">    </span><span class="c1">// calls. Accumulate the final result, appending the appropriate number</span>
+<span class="w">    </span><span class="c1">// of zeros (i.e., multiplying by the appropriate power of 10).</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="n">adjusted</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="n">n</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c1a</span><span class="w"> </span><span class="n">adjusted</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c1b</span><span class="w"> </span><span class="n">adjusted</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c0</span><span class="w"> </span><span class="n">adjusted</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="mi">0</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=839cabee">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2e464d79">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To get a better intuition for the total number of multiplications involved, we'll now complete our divide and conquer multiplication worksheet for two 4-digit numbers, <code>1203</code> times <code>4536</code>.</p>
+<p><a href="https://latessa.github.io/cpp-labs/docs/worksheets/Lab09/Multiply_DC_Worksheet.pdf">Divide and Conquer Multiplication Worksheet</a></p>
+<p>We see that the divide and conquer multiplication method requires <code>4</code> multiplications of smaller numbers at each level of recursion. For our two 4-digit numbers, we performed a total of <code>16</code> single-digit multiplications, which is the same as the elementary school method for 4-digit numbers.</p>
+<p>The Karatsuba algorithm improves upon this by reducing the number of multiplications needed at each level of recursion from <code>4</code> to <code>3</code>, leading to a faster overall multiplication method for large numbers.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=22ba114c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="The-Karatsuba-Optimization-(using-A-=-1203,-B-=-4536)">The Karatsuba Optimization (using A = 1203, B = 4536)<a class="anchor-link" href="#The-Karatsuba-Optimization-(using-A-=-1203,-B-=-4536)">¶</a></h3><p>$$
+\begin{aligned}
+AL &amp;= 12 &amp;\qquad AR &amp;= 03\\
+BL &amp;= 45 &amp;\qquad BR &amp;= 36
+\end{aligned}
+$$</p>
+<p>Compute the “FIRSTS” and “LASTS” products. These are the same as in the basic divide and conquer method:</p>
+<p>$$
+\begin{aligned}
+C_2 &amp;= AL \times BL = 12 \times 45 = 540\\[4pt]
+C_0 &amp;= AR \times BR = 03 \times 36 = 108
+\end{aligned}
+$$</p>
+<p>Compute the middle term C1. Here is where the original two multiplications (C1A and C1B) are replaced with a single multiplication and along with some additions and subtractions.</p>
+<p>First, let's compare how C1 would be computed in the basic divide and conquer method:</p>
+<p>$$
+\begin{aligned}
+C_1 &amp;= (AL \times BR) + (AR \times BL) \\[4pt]
+    &amp;= (12 \times 36) + (03 \times 45) = 432 + 135 = 567
+\end{aligned}
+$$</p>
+<p>Karatsuba computes C1 using one multiplication instead of two:
+$$
+\begin{aligned}
+C_1 &amp;= (AL + AR)\times(BL + BR) - C_2 - C_0\\[4pt]
+    &amp;= (12 + 03)\times(45 + 36) - 540 - 108\\[4pt]
+    &amp;= 15 \times 81 - 648 = 1215 - 648 = 567
+\end{aligned}
+$$</p>
+<p>With Karatsuba's enhancement, each recursion level requires 3 multiplications instead of 4, improving asymptotic performance for large inputs. Instead of $\mathcal{O}(n^2)$, Karatsuba's algorithm runs in $\mathcal{O}(n^{\log_2 3}) \approx \mathcal{O}(n^{1.585})$.</p>
+<p>The recursive pseudocode for Karatsuba is not much different from the basic divide and conquer method. The only change is in how C1 is computed.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d2b8045">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="The-Recursive-Pseudocode-(Karatsuba)">The Recursive Pseudocode (Karatsuba)<a class="anchor-link" href="#The-Recursive-Pseudocode-(Karatsuba)">¶</a></h2><div class="highlight"><pre><span></span><span class="n">function</span><span class="w"> </span><span class="n">karatsuba</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="o">:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">single</span><span class="o">-</span><span class="n">digit</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">single</span><span class="o">-</span><span class="n">digit</span><span class="o">:</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="n">B</span><span class="w">  </span><span class="c1">// This is the base case (multiplying single-digit numbers)</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Prepare for the recursive steps by determining the half-length.</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">A</span><span class="p">),</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+<span class="w">    </span><span class="n">half_n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Split A and B into their respective halves. Assign each half to a variable.</span>
+<span class="w">    </span><span class="n">AL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">A</span>
+<span class="w">    </span><span class="n">AR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">A</span>
+<span class="w">    </span><span class="n">BL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">B</span>
+<span class="w">    </span><span class="n">BR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">half</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">B</span>
+
+<span class="w">    </span><span class="c1">// Recursively call the katarsuba function, passing the appropriate parameters</span>
+<span class="w">    </span><span class="c1">// for C2 and C0, which are the same as in the basic divide and conquer method.</span>
+<span class="w">    </span><span class="n">C2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">karatsuba</span><span class="p">(</span><span class="n">AL</span><span class="p">,</span><span class="w"> </span><span class="n">BL</span><span class="p">)</span><span class="w"> </span><span class="c1">// FIRSTS</span>
+<span class="w">    </span><span class="n">C0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">karatsuba</span><span class="p">(</span><span class="n">AR</span><span class="p">,</span><span class="w"> </span><span class="n">BR</span><span class="p">)</span><span class="w"> </span><span class="c1">// LASTS</span>
+
+<span class="w">    </span><span class="c1">// Recursively call the karatsuba function to compute C1 using the optimized method.</span>
+<span class="w">    </span><span class="c1">// This uses the results from C2 and C0 to reduce the number of multiplications</span>
+<span class="w">    </span><span class="c1">// needed to compute C1.</span>
+<span class="w">    </span><span class="n">C1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">karatsuba</span><span class="p">(</span><span class="n">AL</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AR</span><span class="p">,</span><span class="w"> </span><span class="n">BL</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">BR</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">C2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">C0</span>
+
+<span class="w">    </span><span class="c1">// Calculate the addition part using the results from the recursive</span>
+<span class="w">    </span><span class="c1">// calls. Accumulate the final result, appending the appropriate number</span>
+<span class="w">    </span><span class="c1">// of zeros (i.e., multiplying by the appropriate power of 10).</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="n">adjusted</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="n">n</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="n">adjusted</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c0</span><span class="w"> </span><span class="n">adjusted</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="mi">0</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=954fb6c0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To get a better intuition for the total number of multiplications involved, a similar worksheet is provided to step through the <code>1203</code> times <code>4536</code> multiplication with the Karatsuba optimization.</p>
+<p><a href="https://latessa.github.io/cpp-labs/docs/worksheets/Lab09/Multiply_Karatsuba_Worksheet.pdf">Karatsuba Multiplication Worksheet</a></p>
+<p>We see that the Karatsuba multiplication method requires <code>3</code> multiplications of smaller numbers at each level of recursion. For our two 4-digit numbers, we performed a total of <code>9</code> single-digit multiplications, which is fewer than the <code>16</code> single-digit multiplications required by both the elementary school method and the basic divide and conquer method for 4-digit numbers.</p>
 </div>
 </div>
 </div>
