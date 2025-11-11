@@ -52,3 +52,8 @@ Run the code snippets in the notebooks by clicking on the cell and pressing Shif
 [Lab 09 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab09/Lab09_Examples.ipynb)
 
 [Lab 09 Examples (Static)](https://latessa.github.io/cpp-labs/Lab09_Examples.html)
+
+## Lab 10 Bubble Sort
+[Lab 10 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab10/Lab10_Examples.ipynb)
+
+[Lab 10 Examples (Static)](https://latessa.github.io/cpp-labs/Lab10_Examples.html)
