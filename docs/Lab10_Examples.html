@@ -7528,7 +7528,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Click &lt;shift&gt; &lt;enter&gt; in each code cell to run the code. Be sure to start with the <code>#include</code> directives to load the required libraries.</p>
+<p>Click <shift> <enter> in each code cell to run the code. Be sure to start with the <code>#include</code> directives to load the required libraries.</enter></shift></p>
 </div>
 </div>
 </div>
@@ -7557,7 +7557,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h1><p>In today lab, we will discuss bubble sort and analyze its time complexity in terms of Big-0, Big-Ω, and Big-Θ notation. Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. It is known as a comparison-based sorting algorithm, which relies on comparing elements to determine their correct order.</p>
+<h1 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h1><p>In today's lab, we will discuss bubble sort and analyze its time complexity in terms of Big-0, Big-Ω, and Big-Θ notation. Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. It is known as a comparison-based sorting algorithm, which relies on comparing elements to determine their correct order.</p>
 </div>
 </div>
 </div>
@@ -7569,17 +7569,17 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2>The Meaning of Big <span>\(\mathcal{O}\), \(\Omega\), and \(\Theta\)</span></h2>
-<p>These symbols stand for Big-O (the letter O), Big-Omega (the Greek letter Ω), and Big-Theta (the Greek letter Θ). They are used performance or complexity of an algorithm in terms of space or time as the input size grows.</p>
+<p>These symbols stand for Big-O (the letter O), Big-Omega (the Greek letter Ω), and Big-Theta (the Greek letter Θ). They are used to describe the performance or complexity of an algorithm in terms of space or time as the input size grows.</p>
 <p>For the rest of the analysis, we will focus on time complexity, although the same terms apply to space complexity too.</p>
 <ul>
 <li><p><strong>Big-O</strong> describes an upper bound on the algorithm's complexity, the maximum amount of time the algorithm could take for a given problem size of <code>n</code>.</p>
 </li>
 <li><p><strong>Big-Ω</strong> describes a lower bound on the algorithm's complexity, the minimum amount of time the algorithm could take for a given problem size of <code>n</code>.</p>
 </li>
-<li><p><strong>Big-Θ</strong> describes a tight bound on the algorithm's complexity, meaning it it bound at that complexity from above and from below.</p>
+<li><p><strong>Big-Θ</strong> describes a tight bound on the algorithm's complexity, meaning it is bounded at that complexity from above and from below.</p>
 </li>
 </ul>
-<p>We will apply these terms to bubble sort, but before we do, let's look at a few very simple algorithms to get some practice at using these terms.</p>
+<p>We will apply these terms to bubble sort, but before we do, let's look at a few very simple algorithms to get some practice using these terms.</p>
 </div>
 </div>
 </div>
@@ -7635,7 +7635,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Regardless of the value of <code>num</code>, this algorithm takes the same amount of time to run. Flipping the sign of 10 will take the same amount of time as flipping the sign of 1000. It's a constant time operation, so we say it is O(1), Ω(1), and Θ(1).</p>
-<p>Big-O says that the algorithm will never run any longer than constant time. It's only speaks of this upper bound. It says that constant time is the longest amount of time this algorithm could take.</p>
+<p>Big-O says that the algorithm will never run any longer than constant time. It only speaks of this upper bound. It says that constant time is the longest amount of time this algorithm could take.</p>
 <p>Big-Ω says that the algorithm will never run any shorter than constant time. It only speaks of this lower bound. It says that constant time is the shortest amount of time this algorithm could take.</p>
 <p>Big-Θ says that the algorithm will never run any longer than AND never run any shorter than constant time. It speaks to both the upper and lower bounds. It is a tight bound.</p>
 <p>But not all algorithms have the same upper and lower bounds. Let's look at an example.</p>
@@ -7706,7 +7706,7 @@ a.anchor-link {
 <p>Example list: [3, 5, 2, 8, 6]</p>
 <p>If we are searching for the number 3, the algorithm will find it on the first comparison. This is the best-case and we'll have our answer in constant time.</p>
 <p>If we are searching for the number 6 (or for a number that isn't there) the algorithm will have to check every element in the list before knowing the answer. This is the worst-case and will take linear time, O(n), where n is the number of elements in the list.</p>
-<p>Here the best-case case and worst-case are different. The algorithm is O(n) because in the worst-case it will take linear time. The algorithm is Ω(1) because in the best-case it will take constant time. However, we cannot say it is Θ(n) because the lower bound does not equal the upper bound.</p>
+<p>Here the best-case and worst-case are different. The algorithm is O(n) because in the worst-case it will take linear time. The algorithm is Ω(1) because in the best-case it will take constant time. However, we cannot say it is Θ(n) because the lower bound does not equal the upper bound.</p>
 <p>Note that sometimes, we will use Θ to describe a specific case such as the worst-case.  It might be said that "the worst-case time complexity of linear search is Θ(n)". Here we are only talking about the worst-case, so we can place a tight bound on it. The worst-case will always be linear time. The worst-case is Θ(n).</p>
 <p>Θ will often be used to describe an algorithm's average-case. But Θ itself does not suggest an average-case. It simply places a tight bound (a bound from above and below) on an algorithm's complexity.</p>
 </div>
@@ -7790,22 +7790,9 @@ a.anchor-link {
 </li>
 </ol>
 <h4 id="Time-Complexity-Analysis">Time Complexity Analysis<a class="anchor-link" href="#Time-Complexity-Analysis">¶</a></h4><p>Just like linear search, we could get lucky and find the target on the first try. The item we're looking for could be the middle element of the whole list. This best-case is constant time. So, binary search is Ω(1).</p>
-<p>Binary search is an efficient divide-and-conquer algorithm that only works if the list is sorted. But if the list is sorted, the running time is much better than linear search. Binary search works by dividing the list in half, and checking the middle element. If the middle element is greater than the target, we can disregard the entire upper half of the list. If the middle element is less than the target, we can disregard the entire lower half of the list. We recurse on the half that could contain the target, halving the problem size with each recursive call.</p>
-<p>Considering the list <code>{2, 4, 5, 8, 9, 12, 15, 18, 20, 25, 30, 35, 40, 45, 50}</code> and the target value of 40.</p>
-<ol>
-<li><p>First, we check the middle element (18). Since 40 is greater than 18, we can ignore the lower half of the list.</p>
-</li>
-<li><p>Next, we check the middle element of the remaining upper half (35). Since 40 is greater than 35, we can again ignore the lower half of this sub-list.</p>
-</li>
-<li><p>We then check the middle element of the remaining upper half (45). Since 40 is less than 45, we can ignore the upper half of this sub-list.</p>
-</li>
-<li><p>Finally, we check the middle element of the remaining lower half (40). We found the target!</p>
-</li>
-</ol>
-<h4 id="Time-Complexity-Analysis">Time Complexity Analysis<a class="anchor-link" href="#Time-Complexity-Analysis">¶</a></h4><p>Just like linear search, we could get lucky and find the target on the first try. The item we're looking for could be the middle element of the whole list. This best-case is constant time. So, binary search is Ω(1).</p>
 <p>The worst-case occurs when we keep halving until the sub-list size is 1. For example, a list of size 128 is repeatedly halved as</p>
 <p>128 → 64 → 32 → 16 → 8 → 4 → 2 → 1</p>
-<p>This repeated division by 2 means the number of steps grows logarithmically. In general the number of halvings is about log₂ n. For instance, 2^7 = 128, so log₂ 128 = 7. Therefore the upper bound on the running time is logarithmic, O(log n). This is impressive: for n ≈ 1,000,000, 2^20 = 1,048,576, so log₂ n ≈ 20 — binary search will only need to loo at about 20 elements in the worst-case.</p>
+<p>This repeated division by 2 means the number of steps grows logarithmically. In general the number of halvings is about log₂ n. For instance, 2^7 = 128, so log₂ 128 = 7. Therefore the upper bound on the running time is logarithmic, O(log n). This is impressive: for n ≈ 1,000,000, 2^20 = 1,048,576, so log₂ n ≈ 20 — binary search will only need to look at about 20 elements in the worst-case.</p>
 </div>
 </div>
 </div>
@@ -7816,7 +7803,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3>Count the Occurrences of a Number in an Unsorted List <span>\(\mathcal{O}(n), \Theta(n), \Omega(n)\)</span></h3>
+<h3 id="Count-the-Occurrences-of-a-Number-in-an-Unsorted-List-$%5Cmathcal%7BO%7D(n),%5C-%5CTheta(n),%5C-%5COmega(n)$">Count the Occurrences of a Number in an Unsorted List $\mathcal{O}(n),\ \Theta(n),\ \Omega(n)$<a class="anchor-link" href="#Count-the-Occurrences-of-a-Number-in-an-Unsorted-List-$%5Cmathcal%7BO%7D(n),%5C-%5CTheta(n),%5C-%5COmega(n)$">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7999,7 +7986,7 @@ $$T(9) = \frac{9(9-1)}{2} = \frac{72}{2} = 36$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Improved bubble sort adds a flag to indicate that if we conclude a pass without any swaps, the sorting is complete. The best-case occurs when the list is already sorted at the start. A single pass through list will confirm that no swaps are needed, and the algorithm can exit after only n-1 comparisons. Therefore, the best-case time complexity is linear.</p>
+<p>Improved bubble sort adds a flag to indicate that if we conclude a pass without any swaps, the sorting is complete. The best-case occurs when the list is already sorted at the start. A single pass through the list will confirm that no swaps are needed, and the algorithm can exit after only n-1 comparisons. Therefore, the best-case time complexity is linear.</p>
 <p>For today's lab assignment, we will implement the improved bubble sort, while counting the number of swaps and comparisons.</p>
 <div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">improvedBubbleSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
