@@ -57,3 +57,8 @@ Run the code snippets in the notebooks by clicking on the cell and pressing Shif
 [Lab 10 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab10/Lab10_Examples.ipynb)
 
 [Lab 10 Examples (Static)](https://latessa.github.io/cpp-labs/Lab10_Examples.html)
+
+## Lab 11 Huffman Trees
+[Lab 11 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab11/Lab11_Examples.ipynb)
+
+[Lab 11 Examples (Static)](https://latessa.github.io/cpp-labs/Lab11_Examples.html)
