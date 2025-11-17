@@ -7812,6 +7812,7 @@ Current Node Data: 9
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The <code>char</code> datatype in C++ is associated with a unique ASCII code value. The size of each <code>char</code> is typically 1 byte (8 bits), which allows for 256 different characters (from 0 to 255 in decimal).  If the alphabet of the data we want to encode is smaller than 256 characters, we can use a fewer number of bits per character.</p>
+<p>Link to <a href="https://www.lookuptables.com/text/ascii-table">ASCII Table</a></p>
 <p>In today's lab, we'll be working with an alphabet of only 6 characters: A, B, C, D, E, and F. With 6 characters, we only need 3 bits to represent each character using a fixed-length encoding scheme:</p>
 <div class="highlight"><pre><span></span>A: 000
 B: 001
@@ -7843,7 +7844,147 @@ F: 110
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-Huffman-Algorithm">The Huffman Algorithm<a class="anchor-link" href="#The-Huffman-Algorithm">¶</a></h2>
+<h2 id="The-Huffman-Algorithm">The Huffman Algorithm<a class="anchor-link" href="#The-Huffman-Algorithm">¶</a></h2><ul>
+<li>Assume that we have an alphabet of 6 characters: <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, and <code>F</code>. And probabilistically, they occur with the following frequencies:</li>
+</ul>
+<div class="highlight"><pre><span></span>Character Frequency Percentage
+A               .05
+B               .09
+C               .12
+D               .13
+E               .16
+F               .45
+</pre></div>
+<ul>
+<li>Our goal is to build a tree such that the less frequently occurring characters are closer to the bottom of the tree, and the more frequently occurring characters are closer to the top. So, we start by selecting the two characters with the lowest frequencies, <code>A</code> and <code>B</code>.  <code>A</code> and <code>B</code> will be leaf nodes and we will connect them to a newly created parent.</li>
+</ul>
+<div class="highlight"><pre><span></span>        *    Node AB (.05 + .09 = .14)
+       / \
+      A   B
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cfdbd147">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span>Character Frequency Percentage
+AB              .14
+C               .12
+D               .13
+E               .16
+F               .45
+</pre></div>
+<ul>
+<li>We replaced <code>A</code> and <code>B</code> in our list with our combined node <code>AB</code>.</li>
+<li>Next, we select the two lowest frequency nodes, <code>C</code> and <code>D</code>, and create a new parent node <code>CD</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span>        *    Node CD (.12 + .13 = .25)
+       / \
+      C   D
+</pre></div>
+<ul>
+<li>Our updated list is now:</li>
+</ul>
+<div class="highlight"><pre><span></span>Character Frequency Percentage
+AB              .14
+CD              .25
+E               .16
+F               .45
+</pre></div>
+<ul>
+<li>Next, we select the two lowest frequency nodes, <code>AB</code> and <code>E</code>, and create a new parent node <code>ABE</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span>        *    Node ABE (.14 + .16 = .30)
+       / \
+      AB  E
+     / \
+    A   B
+</pre></div>
+<ul>
+<li>Our updated list is now:</li>
+</ul>
+<div class="highlight"><pre><span></span>Character Frequency Percentage
+CD              .25
+ABE             .30
+F               .45
+</pre></div>
+<ul>
+<li>Next, we select the two lowest frequency nodes, <code>CD</code> and <code>ABE</code>, and create a new parent node <code>CDABE</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span>          *     Node CDABE (.25 + .30 = .55)
+       /     \
+     CD      ABE
+    / \      / \
+   C  D     AB  E
+           / \
+          A   B 
+</pre></div>
+<ul>
+<li>Our updated list is now:</li>
+</ul>
+<div class="highlight"><pre><span></span>Character Frequency Percentage
+CDABE          .55
+F              .45
+</pre></div>
+<ul>
+<li>Next we select the two lowest frequency nodes, <code>F</code> and <code>CDABE</code>, and create a new parent node <code>FCDABE</code>, which will be called the <code>root</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span>              *              Root Node (.45 + .55 = 1.0)
+           /      \
+          F      CDABE
+                /     \
+              CD      ABE
+             / \      / \
+            C  D     AB  E
+                    / \
+                   A   B 
+</pre></div>
+<ul>
+<li><p>Note that the when connecting nodes with a common parent, the left child is always the node with the lower frequency. This is just a convention that we will follow, so that our approach is consistent, and we all work with the same encoding.</p>
+</li>
+<li><p>Now that we have built our Huffman Tree, we can assign binary codes by traversing the tree from the root to each leaf. For each left edge, we append a <code>0</code> to the codeword and for each right edge, we append a <code>1</code>.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>F  : 0     to reach leaf F, we start at the root and traverse left (0)
+C  : 10    to reach leaf C, we start at the root and traverse right (1), then left (0), then left (0).
+D  : 101   to reach leaf D, we start at the root and traverse right (1), then left (0), then right (1).
+A  : 1100  to reach leaf A, we start at the root and traverse right (1), then right (1), then left (0), then left (0).
+B  : 1101  to reach leaf B, we start at the root and traverse right (1), then right (1), then left (0), then right (1).
+E  : 111   to reach leaf E, we start at the root and traverse right (1), then right (1), then right (1).
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1442938e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span>├──<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
+│<span class="w">   </span>├──<span class="w"> </span><span class="o">(</span><span class="m">0</span>.55<span class="o">)</span>
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="o">(</span><span class="m">0</span>.3<span class="o">)</span>
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──E<span class="w"> </span><span class="o">(</span><span class="m">0</span>.16<span class="o">)</span>
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span><span class="o">(</span><span class="m">0</span>.14<span class="o">)</span>
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">       </span>├──B<span class="w"> </span><span class="o">(</span><span class="m">0</span>.09<span class="o">)</span>
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">       </span>└──A<span class="w"> </span><span class="o">(</span><span class="m">0</span>.05<span class="o">)</span>
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span><span class="o">(</span><span class="m">0</span>.25<span class="o">)</span>
+│<span class="w">   </span>│<span class="w">       </span>├──D<span class="w"> </span><span class="o">(</span><span class="m">0</span>.13<span class="o">)</span>
+│<span class="w">   </span>│<span class="w">       </span>└──C<span class="w"> </span><span class="o">(</span><span class="m">0</span>.12<span class="o">)</span>
+│<span class="w">   </span>└──F<span class="w"> </span><span class="o">(</span><span class="m">0</span>.45<span class="o">)</span>
+
+Encoded<span class="w"> </span>string:<span class="w"> </span><span class="m">1000101011001101100000100111</span>
+Decoded<span class="w"> </span>string:<span class="w"> </span>CFDFABCFFFCE
+Fixed-length<span class="w"> </span>encoding<span class="w"> </span>size:<span class="w"> </span><span class="m">36</span><span class="w"> </span>bits
+Huffman<span class="w"> </span>encoded<span class="w"> </span>size:<span class="w"> </span><span class="m">28</span><span class="w"> </span>bits
+Compression<span class="w"> </span>ratio<span class="w"> </span><span class="o">(</span><span class="w"> </span>fixed<span class="w"> </span>length<span class="w"> </span>size<span class="w"> </span>/<span class="w"> </span>huffman<span class="w"> </span>size<span class="w"> </span><span class="o">)</span>:<span class="w"> </span><span class="m">1</span>.29
+</pre></div>
 </div>
 </div>
 </div>
