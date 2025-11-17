@@ -7613,7 +7613,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
@@ -7961,13 +7961,62 @@ E  : 111   to reach leaf E, we start at the root and traverse right (1), then ri
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=93c20122">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Full-Huffman-Tree">Full Huffman Tree<a class="anchor-link" href="#Full-Huffman-Tree">¶</a></h2><p><img alt="Full Huffman Tree" src="docs/images/Lab11/huffman_tree.png"/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73d7b05a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Compression-Rate">Compression Rate<a class="anchor-link" href="#Compression-Rate">¶</a></h2><p>Using our Huffman encoding scheme, we can calculate the average number of bits per character:</p>
+<div class="highlight"><pre><span></span>Character Frequency Percentage Codeword Length Contribution
+A               .05               4            .20
+B               .09               4            .36
+C               .12               3            .36
+D               .13               3            .39
+E               .16               3            .48
+F               .45               1            .45
+-----------------------------------------------
+Total Average Bits per Character:               2.24
+</pre></div>
+<p>We need on average only 2.24 bits per character.</p>
+<p>To determine the fixed-length bit length we compute:</p>
+<p>$$
+\text{bits}_{\text{fixed}} \;=\; \big\lceil \log_2(\text{alphabet size}) \big\rceil
+\;=\; \big\lceil \log_2 6 \big\rceil \;=\; 3
+$$</p>
+<p>For an example text of (n=100) characters:</p>
+<p>$$
+\begin{aligned}
+\text{Fixed-length bits} &amp;= 100 \times 3 = 300\ \text{bits} \\
+\text{Huffman bits}      &amp;= 100 \times 2.24 = 224\ \text{bits} \\
+\text{Compression ratio} &amp;= \dfrac{224}{300} \approx 0.7467 \;(\approx 74.67\%) \\
+\text{Space savings}     &amp;= 1 - 0.7467 \approx 0.2533 \;(\approx 25.33\%)
+\end{aligned}
+$$</p>
+<p>Thus, the Huffman-encoded file is about 74.67% the size of the fixed-length encoded file (≈25.33% smaller).</p>
+<pre><code></code></pre>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1442938e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span>├──<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<h2 id="Sample-Lab-11-Output-Using-the-Frequencies-Above">Sample Lab 11 Output Using the Frequencies Above<a class="anchor-link" href="#Sample-Lab-11-Output-Using-the-Frequencies-Above">¶</a></h2><div class="highlight"><pre><span></span>├──<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
 │<span class="w">   </span>├──<span class="w"> </span><span class="o">(</span><span class="m">0</span>.55<span class="o">)</span>
 │<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="o">(</span><span class="m">0</span>.3<span class="o">)</span>
 │<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──E<span class="w"> </span><span class="o">(</span><span class="m">0</span>.16<span class="o">)</span>
@@ -7985,6 +8034,7 @@ Fixed-length<span class="w"> </span>encoding<span class="w"> </span>size:<span c
 Huffman<span class="w"> </span>encoded<span class="w"> </span>size:<span class="w"> </span><span class="m">28</span><span class="w"> </span>bits
 Compression<span class="w"> </span>ratio<span class="w"> </span><span class="o">(</span><span class="w"> </span>fixed<span class="w"> </span>length<span class="w"> </span>size<span class="w"> </span>/<span class="w"> </span>huffman<span class="w"> </span>size<span class="w"> </span><span class="o">)</span>:<span class="w"> </span><span class="m">1</span>.29
 </pre></div>
+<h4 id="The-lab-assignment-will-apply-the-same-6-character-alphabet-but-with-different-frequencies.">The lab assignment will apply the same 6-character alphabet but with <code>different</code> frequencies.<a class="anchor-link" href="#The-lab-assignment-will-apply-the-same-6-character-alphabet-but-with-different-frequencies.">¶</a></h4><p>We will now look through the lab assignment and the TODO items in the given starter code.</p>
 </div>
 </div>
 </div>
