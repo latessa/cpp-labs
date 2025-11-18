@@ -7602,7 +7602,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Representing-Trees-in-C++">Representing Trees in C++<a class="anchor-link" href="#Representing-Trees-in-C++">¶</a></h2><p>Unlike with arrays, where elements are stored in contiguous memory locations, trees are typically represented using nodes that contain data and pointers. The node's data field holds the value stored by the node, and the pointers link to other nodes in the tree. In a binary tree, each node will typically have two pointers, one to each child. This allows the tree to be traversed from the root down to the leaves.</p>
-<p>But a tree can also have a pointer to its parent node, which allows traversal from child to parent. In our Huffman Tree implementation, we will start with child nodes, and we will connect them by creating a common parent node.</p>
+<p>But a tree can also have a pointer to its parent node, which allows traversal from child to parent.</p>
 <p>The following example is not a Huffman Tree, but it is a simple binary tree that illustrates how nodes can be connected and traversed.</p>
 </div>
 </div>
@@ -7612,7 +7612,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
@@ -7662,13 +7662,15 @@ Current Node Data: 8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">printSimple</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
 <span class="w">    </span><span class="n">printSimple</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">depth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">depth</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">"    "</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">depth</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"    "</span><span class="w"> </span><span class="p">);</span>
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
 <span class="w">    </span><span class="n">printSimple</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">depth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
@@ -7699,7 +7701,7 @@ Current Node Data: 8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// Let's next add a couple children to node 8 and then print the tree again.</span>
@@ -7821,7 +7823,7 @@ E: 100
 F: 101
 </pre></div>
 <p>If the data that uses this alphabet is 128 characters long, using a fixed-length encoding scheme such as this one would require $128 * 3 = 384$ bits to encode the message.</p>
-<p>Can we do better? Do we need three bits (a fixed length scheme) for every character? What if some characters are more common than others? Could we give those more frequent characters shorter codes?"</p>
+<p>Can we do better? Do we need three bits (a fixed length scheme) for every character? What if some characters are more common than others? Could we give those more frequent characters shorter codes?</p>
 <p>How about this? Do you see a problem with this encoding scheme?</p>
 <div class="highlight"><pre><span></span>A: 10
 B: 101
@@ -7967,6 +7969,8 @@ E : 111   to reach leaf E, start at root, traverse right (1), then right (1), th
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Full-Huffman-Tree">Full Huffman Tree<a class="anchor-link" href="#Full-Huffman-Tree">¶</a></h2><img alt="Full Huffman Tree" src="https://latessa.github.io/cpp-labs/images/Lab11/huffman_tree.png" style="width:80%"/>
+<p>How would we encode the string <code>FED</code>?</p>
+<p>Huffman Encoded string: <code>0111101</code></p>
 </div>
 </div>
 </div>
