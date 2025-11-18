@@ -7537,7 +7537,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// For Lab 11, we are limited to using only the following #include directives:</span>
@@ -7546,7 +7546,6 @@ a.anchor-link {
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -7613,7 +7612,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
@@ -7663,7 +7662,7 @@ Current Node Data: 8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">printSimple</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -7700,7 +7699,7 @@ Current Node Data: 8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// Let's next add a couple children to node 8 and then print the tree again.</span>
@@ -7734,7 +7733,7 @@ Current Node Data: 8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// And now we'll set our current pointer to the root,</span>
@@ -7950,12 +7949,12 @@ F              .45
 <li><p>Now that we have built our Huffman Tree, we can assign binary codes by traversing the tree from the root to each leaf. For each left edge, we append a <code>0</code> to the codeword and for each right edge, we append a <code>1</code>.</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span>F  : 0     to reach leaf F, we start at the root and traverse left (0)
-C  : 10    to reach leaf C, we start at the root and traverse right (1), then left (0), then left (0).
-D  : 101   to reach leaf D, we start at the root and traverse right (1), then left (0), then right (1).
-A  : 1100  to reach leaf A, we start at the root and traverse right (1), then right (1), then left (0), then left (0).
-B  : 1101  to reach leaf B, we start at the root and traverse right (1), then right (1), then left (0), then right (1).
-E  : 111   to reach leaf E, we start at the root and traverse right (1), then right (1), then right (1).
+<div class="highlight"><pre><span></span>F : 0     to reach leaf F, start at root, traverse left (0)
+C : 100   to reach leaf C, start at root, traverse right (1), then left (0), then left (0).
+D : 101   to reach leaf D, start at root, traverse right (1), then left (0), then right (1).
+A : 1100  to reach leaf A, start at root, traverse right (1), then right (1), then left (0), then left (0).
+B : 1101  to reach leaf B, start at root, traverse right (1), then right (1), then left (0), then right (1).
+E : 111   to reach leaf E, start at root, traverse right (1), then right (1), then right (1).
 </pre></div>
 </div>
 </div>
@@ -7967,7 +7966,7 @@ E  : 111   to reach leaf E, we start at the root and traverse right (1), then ri
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Full-Huffman-Tree">Full Huffman Tree<a class="anchor-link" href="#Full-Huffman-Tree">¶</a></h2><p><img alt="Full Huffman Tree" src="https://latessa.github.io/cpp-labs/images/Lab11/huffman_tree.png"/></p>
+<h2 id="Full-Huffman-Tree">Full Huffman Tree<a class="anchor-link" href="#Full-Huffman-Tree">¶</a></h2><img alt="Full Huffman Tree" src="https://latessa.github.io/cpp-labs/images/Lab11/huffman_tree.png" style="width:80%"/>
 </div>
 </div>
 </div>
@@ -7995,7 +7994,7 @@ Total Average Bits per Character:               2.24
 \text{bits}_{\text{fixed}} \;=\; \big\lceil \log_2(\text{alphabet size}) \big\rceil
 \;=\; \big\lceil \log_2 6 \big\rceil \;=\; 3
 $$</p>
-<p>For an example text of (n=100) characters:</p>
+<p>For an example text of (n=100) characters in decoded form:</p>
 <p>$$
 \begin{aligned}
 \text{Fixed-length bits} &amp;= 100 \times 3 = 300\ \text{bits} \\
@@ -8028,11 +8027,12 @@ $$</p>
 │<span class="w">   </span>│<span class="w">       </span>└──C<span class="w"> </span><span class="o">(</span><span class="m">0</span>.12<span class="o">)</span>
 │<span class="w">   </span>└──F<span class="w"> </span><span class="o">(</span><span class="m">0</span>.45<span class="o">)</span>
 
-Encoded<span class="w"> </span>string:<span class="w"> </span><span class="m">1000101011001101100000100111</span>
-Decoded<span class="w"> </span>string:<span class="w"> </span>CFDFABCFFFCE
-Fixed-length<span class="w"> </span>encoding<span class="w"> </span>size:<span class="w"> </span><span class="m">36</span><span class="w"> </span>bits
-Huffman<span class="w"> </span>encoded<span class="w"> </span>size:<span class="w"> </span><span class="m">28</span><span class="w"> </span>bits
-Compression<span class="w"> </span>ratio<span class="w"> </span><span class="o">(</span><span class="w"> </span>fixed<span class="w"> </span>length<span class="w"> </span>size<span class="w"> </span>/<span class="w"> </span>huffman<span class="w"> </span>size<span class="w"> </span><span class="o">)</span>:<span class="w"> </span><span class="m">1</span>.29
+Encoded<span class="w"> </span>string:<span class="w"> </span><span class="m">0110010011101100100111101000</span>
+Decoded<span class="w"> </span>string:<span class="w"> </span>FACEFACEDFFF
+Fixed<span class="w"> </span>Length<span class="w"> </span>Bits:<span class="w"> </span><span class="m">36</span><span class="w"> </span>bits
+Average<span class="w"> </span>Huffman<span class="w"> </span>Bits:<span class="w"> </span><span class="m">26</span>.88<span class="w"> </span>bits
+Compression<span class="w"> </span>Rate<span class="w"> </span><span class="o">(</span>Huffman<span class="w"> </span>/<span class="w"> </span>Fixed<span class="w"> </span>Length<span class="o">)</span>:<span class="w"> </span><span class="m">0</span>.75
+Space<span class="w"> </span>Savings:<span class="w"> </span><span class="m">25</span>.33%
 </pre></div>
 <h4 id="The-lab-assignment-will-apply-the-same-6-character-alphabet-but-with-different-frequencies.">The lab assignment will apply the same 6-character alphabet but with <code>different</code> frequencies.<a class="anchor-link" href="#The-lab-assignment-will-apply-the-same-6-character-alphabet-but-with-different-frequencies.">¶</a></h4><p>We will now look through the lab assignment and the TODO items in the given starter code.</p>
 </div>
