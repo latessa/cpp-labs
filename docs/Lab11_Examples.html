@@ -7528,7 +7528,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Click <shift> <enter> in each code cell to run the code. Be sure to start with the <code>#include</code> directives to load the required libraries.</enter></shift></p>
+<p>Click Shift+Enter in each code cell to run the code. Be sure to start with the <code>#include</code> directives to load the required libraries.</p>
 </div>
 </div>
 </div>
@@ -7558,7 +7558,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h1><p>In today's lab, we will look at Huffman Trees. A Huffman Tree is a data structure used for data compression. We will build a Huffman Tree and use to to decode an encoded string. Before we look specifically at Huffman Trees, though, let's review trees and binary trees in general.</p>
+<h1 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h1><p>In today's lab, we will look at Huffman Trees. A Huffman Tree is a data structure used for data compression. We will build a Huffman Tree and use it to decode an encoded string. Before we look specifically at Huffman Trees, though, let's review trees and binary trees in general.</p>
 </div>
 </div>
 </div>
@@ -7576,7 +7576,7 @@ a.anchor-link {
 <li>It has a designated root node, which is the topmost node in the tree.</li>
 </ul>
 <p>Outside, a tree's roots are at the bottom, and they branch upward. Trees as a data structure are the opposite: the root is at the top, and the branches extend downward.</p>
-<p>A <strong>binary tree</strong> is a type of tree where each node has at most two children, a left child and a right child. Binary trees.</p>
+<p>A <strong>binary tree</strong> is a type of tree where each node has at most two children, a left child and a right child.</p>
 <p>Here is an example of a simple binary tree:</p>
 <div class="highlight"><pre><span></span>        A
        / \
@@ -7601,9 +7601,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Representing-Trees-in-C++">Representing Trees in C++<a class="anchor-link" href="#Representing-Trees-in-C++">¶</a></h2><p>Unlike with arrays, where elements are stored in contiguous memory locations, trees are typically represented using nodes that contain data and pointers. The data part holds the value that the node means to store, and the points link to other nodes in the tree. In a binary tree, each node will likely have two points, one to each child. This allows the tree to be traversed from root down to the leaves.</p>
+<h2 id="Representing-Trees-in-C++">Representing Trees in C++<a class="anchor-link" href="#Representing-Trees-in-C++">¶</a></h2><p>Unlike with arrays, where elements are stored in contiguous memory locations, trees are typically represented using nodes that contain data and pointers. The node's data field holds the value stored by the node, and the pointers link to other nodes in the tree. In a binary tree, each node will typically have two pointers, one to each child. This allows the tree to be traversed from the root down to the leaves.</p>
 <p>But a tree can also have a pointer to its parent node, which allows traversal from child to parent. In our Huffman Tree implementation, we will start with child nodes, and we will connect them by creating a common parent node.</p>
-<p>The following example is not a Huffman Tree, but it is a simply binary tree that illustrates how nodes can be connected and traversed.</p>
+<p>The following example is not a Huffman Tree, but it is a simple binary tree that illustrates how nodes can be connected and traversed.</p>
 </div>
 </div>
 </div>
@@ -7612,7 +7612,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
@@ -7662,7 +7662,7 @@ Current Node Data: 8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">printSimple</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -7699,7 +7699,7 @@ Current Node Data: 8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// Let's next add a couple children to node 8 and then print the tree again.</span>
@@ -7733,7 +7733,7 @@ Current Node Data: 8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// And now we'll set our current pointer to the root,</span>
@@ -7768,7 +7768,7 @@ Current Node Data: 9
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="c1">// Now that we're finished with our simple example tree,</span>
@@ -7781,7 +7781,7 @@ Current Node Data: 9
 
 <span class="w">    </span><span class="n">deleteTree</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
 <span class="w">    </span><span class="n">deleteTree</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
-<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="n">deleteTree</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
@@ -7810,7 +7810,7 @@ Current Node Data: 9
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The <code>char</code> datatype in C++ is associated with a unique ASCII code value. The size of each <code>char</code> is typically 1 byte (8 bits), which allows for 256 different characters (from 0 to 255 in decimal).  If the alphabet of the data we want to encode is smaller than 256 characters, we can use a fewer number of bits per character.</p>
+<p>The <code>char</code> datatype in C++ is associated with a unique ASCII code value. The size of each <code>char</code> is typically 1 byte (8 bits), which allows for 256 different characters (from 0 to 255 in decimal).  If the alphabet of the data we want to encode is smaller than 256 characters, we can use fewer number of bits per character.</p>
 <p>Link to <a href="https://www.lookuptables.com/text/ascii-table">ASCII Table</a></p>
 <p>In today's lab, we'll be working with an alphabet of only 6 characters: A, B, C, D, E, and F. With 6 characters, we only need 3 bits to represent each character using a fixed-length encoding scheme:</p>
 <div class="highlight"><pre><span></span>A: 000
@@ -7821,7 +7821,7 @@ E: 100
 F: 101
 </pre></div>
 <p>If the data that uses this alphabet is 128 characters long, using a fixed-length encoding scheme such as this one would require $128 * 3 = 384$ bits to encode the message.</p>
-<p>Can we do better? Do we need three bits (a fixed length scheme) for every character? What if some characters are more common than other characters? we we give those more frequent characters shorter codes?</p>
+<p>Can we do better? Do we need three bits (a fixed length scheme) for every character? What if some characters are more common than others? Could we give those more frequent characters shorter codes?"</p>
 <p>How about this? Do you see a problem with this encoding scheme?</p>
 <div class="highlight"><pre><span></span>A: 10
 B: 101
@@ -7830,8 +7830,8 @@ D: 11
 E: 1
 F: 110
 </pre></div>
-<p>Withe the fixed length scheme, we always knew where the end of one character was and the beginning of the next character. Each codeword was exactly 3 bits long.</p>
-<p>With a variable length scheme like this how, if we read a <code>1</code>, how do we know if we're reading the letter <code>E</code> (codeword <code>1</code>) or the start of the letter <code>A</code> (codeword <code>10</code>) or the start of the letter <code>B</code> (codeword <code>101</code>)? This is the <strong>prefix problem</strong>. We must ensure that no codeword is the first part (or prefix) of another codeword.</p>
+<p>With the fixed-length scheme, we always knew where the end of one character was and the beginning of the next character. Each codeword was exactly 3 bits long.</p>
+<p>With a variable-length scheme like this, if we read a 1, how do we know whether we're reading the letter E (codeword 1) or the start of the letter A (codeword 10) or the start of B (codeword 101)? This is the <strong>prefix problem</strong>. We must ensure that no codeword is the first part (or prefix) of another codeword.</p>
 <p>We can achieve a variable length encoding scheme without the prefix problem by using the Huffman algorithm.</p>
 </div>
 </div>
@@ -7944,7 +7944,7 @@ F              .45
                    A   B 
 </pre></div>
 <ul>
-<li><p>Note that the when connecting nodes with a common parent, the left child is always the node with the lower frequency. This is just a convention that we will follow, so that our approach is consistent, and we all work with the same encoding.</p>
+<li><p>Note that when connecting nodes with a common parent, the left child is always the node with the lower frequency. This is just a convention that we will follow, so that our approach is consistent, and we all work with the same encoding.</p>
 </li>
 <li><p>Now that we have built our Huffman Tree, we can assign binary codes by traversing the tree from the root to each leaf. For each left edge, we append a <code>0</code> to the codeword and for each right edge, we append a <code>1</code>.</p>
 </li>
@@ -7977,7 +7977,7 @@ E : 111   to reach leaf E, start at root, traverse right (1), then right (1), th
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Compression-Rate">Compression Rate<a class="anchor-link" href="#Compression-Rate">¶</a></h2><p>Using our Huffman encoding scheme, we can calculate the average number of bits per character:</p>
+<h2 id="Compression-Ratio">Compression Ratio<a class="anchor-link" href="#Compression-Ratio">¶</a></h2><p>Using our Huffman encoding scheme, we can calculate the average number of bits per character:</p>
 <div class="highlight"><pre><span></span>Character Frequency Percentage Codeword Length Contribution
 A               .05               4            .20
 B               .09               4            .36
@@ -7988,7 +7988,7 @@ F               .45               1            .45
 -----------------------------------------------
 Total Average Bits per Character:               2.24
 </pre></div>
-<p>We need on average only 2.24 bits per character.</p>
+<p>On average, we need only 2.24 bits per character.</p>
 <p>To determine the fixed-length bit length we compute:</p>
 <p>$$
 \text{bits}_{\text{fixed}} \;=\; \big\lceil \log_2(\text{alphabet size}) \big\rceil
@@ -8004,7 +8004,6 @@ $$</p>
 \end{aligned}
 $$</p>
 <p>Thus, the Huffman-encoded file is about 74.67% the size of the fixed-length encoded file (≈25.33% smaller).</p>
-<pre><code></code></pre>
 </div>
 </div>
 </div>
@@ -8031,10 +8030,10 @@ Encoded<span class="w"> </span>string:<span class="w"> </span><span class="m">01
 Decoded<span class="w"> </span>string:<span class="w"> </span>FACEFACEDFFF
 Fixed<span class="w"> </span>Length<span class="w"> </span>Bits:<span class="w"> </span><span class="m">36</span><span class="w"> </span>bits
 Average<span class="w"> </span>Huffman<span class="w"> </span>Bits:<span class="w"> </span><span class="m">26</span>.88<span class="w"> </span>bits
-Compression<span class="w"> </span>Rate<span class="w"> </span><span class="o">(</span>Huffman<span class="w"> </span>/<span class="w"> </span>Fixed<span class="w"> </span>Length<span class="o">)</span>:<span class="w"> </span><span class="m">0</span>.75
+Compression<span class="w"> </span>Ratio<span class="w"> </span><span class="o">(</span>Huffman<span class="w"> </span>/<span class="w"> </span>Fixed<span class="w"> </span>Length<span class="o">)</span>:<span class="w"> </span><span class="m">0</span>.75
 Space<span class="w"> </span>Savings:<span class="w"> </span><span class="m">25</span>.33%
 </pre></div>
-<h4 id="The-lab-assignment-will-apply-the-same-6-character-alphabet-but-with-different-frequencies.">The lab assignment will apply the same 6-character alphabet but with <code>different</code> frequencies.<a class="anchor-link" href="#The-lab-assignment-will-apply-the-same-6-character-alphabet-but-with-different-frequencies.">¶</a></h4><p>We will now look through the lab assignment and the TODO items in the given starter code.</p>
+<h4 id="The-lab-assignment-will-apply-the-same-6-character-alphabet-but-with-different-frequencies.">The lab assignment will apply the same 6-character alphabet but with <code>different</code> frequencies.<a class="anchor-link" href="#The-lab-assignment-will-apply-the-same-6-character-alphabet-but-with-different-frequencies.">¶</a></h4><p>We will now look through the lab assignment and the TODO items in the provided starter code.</p>
 </div>
 </div>
 </div>
