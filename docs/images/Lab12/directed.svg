@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240">
+  <!-- edge A->B -->
+  <line x1="106" y1="60" x2="254" y2="60" stroke="#6c6c6c" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="254,60 246,54 246,66" fill="#6c6c6c"/>
+  <!-- edge A->C (diagonal) -->
+  <line x1="102.3" y1="73.4" x2="257.7" y2="166.6" stroke="#6c6c6c" stroke-width="2" stroke-linecap="round"/>
+  <!-- corrected arrowhead oriented along the A->C direction -->
+  <polygon points="257.7,166.6 246.038,166.6 252.212,156.31" fill="#6c6c6c"/>
+  <!-- edge B->C -->
+  <line x1="280" y1="86" x2="280" y2="154" stroke="#6c6c6c" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="280,154 274,146 286,146" fill="#6c6c6c"/>
+  <!-- nodes -->
+  <circle cx="80" cy="60" r="26" fill="#2b90d9"/>
+  <text x="80" y="66" font-size="16" font-family="Arial" fill="#ffffff" text-anchor="middle">A</text>
+  <circle cx="280" cy="60" r="26" fill="#2b90d9"/>
+  <text x="280" y="66" font-size="16" font-family="Arial" fill="#ffffff" text-anchor="middle">B</text>
+  <circle cx="280" cy="180" r="26" fill="#2b90d9"/>
+  <text x="280" y="186" font-size="16" font-family="Arial" fill="#ffffff" text-anchor="middle">C</text>
+  <circle cx="80" cy="180" r="26" fill="#2b90d9"/>
+  <text x="80" y="186" font-size="16" font-family="Arial" fill="#ffffff" text-anchor="middle">D</text>
+</svg>
