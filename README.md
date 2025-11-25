@@ -62,3 +62,8 @@ Run the code snippets in the notebooks by clicking on the cell and pressing Shif
 [Lab 11 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab11/Lab11_Examples.ipynb)
 
 [Lab 11 Examples (Static)](https://latessa.github.io/cpp-labs/Lab11_Examples.html)
+
+## Lab 12 Dijkstra's Algorithm
+[Lab 12 Examples (Interactive)](https://mybinder.org/v2/gh/latessa/cpp-labs/main?filepath=Lab12/Lab12_Examples.ipynb)
+
+[Lab 12 Examples (Static)](https://latessa.github.io/cpp-labs/Lab12_Examples.html)
