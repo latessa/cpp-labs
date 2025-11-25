@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240">
+  <!-- edges (undirected, single lines) -->
+  <line x1="80" y1="60" x2="280" y2="60" stroke="#6c6c6c" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="60" x2="280" y2="180" stroke="#6c6c6c" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="60" x2="80" y2="180" stroke="#6c6c6c" stroke-width="2" stroke-linecap="round"/>
+  <line x1="280" y1="60" x2="280" y2="180" stroke="#6c6c6c" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="180" x2="280" y2="180" stroke="#6c6c6c" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- edge weights (placed near midpoints) -->
+  <!-- A-B (top horizontal) weight 4 -->
+  <text x="180" y="48" font-size="14" font-family="Arial" fill="#000000" text-anchor="middle">4</text>
+  <!-- A-C (diagonal) weight 1 -->
+  <text x="180" y="110" font-size="14" font-family="Arial" fill="#000000" text-anchor="middle">1</text>
+  <!-- A-D (left vertical) weight 7 -->
+  <text x="64" y="120" font-size="14" font-family="Arial" fill="#000000" text-anchor="middle">7</text>
+  <!-- B-C (right vertical) weight 2 -->
+  <text x="296" y="120" font-size="14" font-family="Arial" fill="#000000" text-anchor="middle">2</text>
+  <!-- C-D (bottom horizontal) weight 3 -->
+  <text x="180" y="195" font-size="14" font-family="Arial" fill="#000000" text-anchor="middle">3</text>
+
+  <!-- nodes -->
+  <circle cx="80" cy="60" r="26" fill="#2b90d9"/>
+  <text x="80" y="66" font-size="16" font-family="Arial" fill="#ffffff" text-anchor="middle">A</text>
+  <circle cx="280" cy="60" r="26" fill="#2b90d9"/>
+  <text x="280" y="66" font-size="16" font-family="Arial" fill="#ffffff" text-anchor="middle">B</text>
+  <circle cx="280" cy="180" r="26" fill="#2b90d9"/>
+  <text x="280" y="186" font-size="16" font-family="Arial" fill="#ffffff" text-anchor="middle">C</text>
+  <circle cx="80" cy="180" r="26" fill="#2b90d9"/>
+  <text x="80" y="186" font-size="16" font-family="Arial" fill="#ffffff" text-anchor="middle">D</text>
+</svg>
