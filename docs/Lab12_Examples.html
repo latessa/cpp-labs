@@ -7690,11 +7690,11 @@ D 1 0 1 0
 <div class="highlight hl-c++"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
 
 <span class="c1">// Adjacency list for a directed graph:</span>
-<span class="c1">// A -&gt; B, C; B -&gt; C; C -&gt; D; D -&gt; (none)</span>
+<span class="c1">// A -&gt; B, C; B -&gt; C; D -&gt; (none)</span>
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">adjList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="c1">// A -&gt; B, C</span>
 <span class="w">    </span><span class="p">{</span><span class="mi">2</span><span class="p">},</span><span class="w">    </span><span class="c1">// B -&gt; C</span>
-<span class="w">    </span><span class="p">{</span><span class="mi">3</span><span class="p">},</span><span class="w">    </span><span class="c1">// C -&gt; D</span>
+<span class="w">    </span><span class="p">{},</span><span class="w">     </span><span class="c1">// C -&gt; none</span>
 <span class="w">    </span><span class="p">{}</span><span class="w">      </span><span class="c1">// D -&gt; none</span>
 <span class="p">};</span>
 
@@ -7703,7 +7703,7 @@ D 1 0 1 0
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">adjMatrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="c1">// A</span>
 <span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="c1">// B</span>
-<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="c1">// C</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="c1">// C</span>
 <span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span><span class="w">  </span><span class="c1">// D</span>
 <span class="p">};</span>
 
@@ -7743,14 +7743,14 @@ D 1 0 1 0
 <pre>Directed Adjacency List:
 A: B C 
 B: C 
-C: D 
+C: 
 D: 
 
 Directed Adjacency Matrix:
   A B C D 
 A 0 1 1 0 
 B 0 0 1 0 
-C 0 0 0 1 
+C 0 0 0 0 
 D 0 0 0 0 
 </pre>
 </div>
