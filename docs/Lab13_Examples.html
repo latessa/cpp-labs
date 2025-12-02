@@ -7556,7 +7556,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><p>In this lab, we'll review three sorting algorithms — Bubble Sort, Merge Sort, and Quick Sort — and use a provided C++ program (<code>lab13.cpp</code>) to run experiments and collect performance data. We'll review the specific sorting algorithms, recognize their time complexities, and show how to configure and run the program to benchmark different types of input data.</p>
+<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><p>In this lab, we'll review three sorting algorithms — Bubble Sort, Merge Sort, and Quick Sort — and use a provided C++ program (<code>lab13.cpp</code>) to run experiments and collect performance data. We'll review the specific sorting algorithms, recognize their time complexities, and show how to configure and run the program to benchmark the different types of input data.</p>
 </div>
 </div>
 </div>
@@ -7567,7 +7567,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Bubble-Sort-(with-Early-Exit)">Bubble Sort (with Early Exit)<a class="anchor-link" href="#Bubble-Sort-(with-Early-Exit)">¶</a></h2><p>Bubble Sort repeatedly steps through the list, compares adjacent pairs, and swaps them when out of order. Each pass bubbles the largest remaining item to the end. An optional early-exit optimization stops the algorithm if a full pass performs no swaps (meaning the list is already sorted).</p>
+<h2 id="Bubble-Sort-(with-Early-Exit)">Bubble Sort (with Early Exit)<a class="anchor-link" href="#Bubble-Sort-(with-Early-Exit)">¶</a></h2><p>Bubble Sort repeatedly steps through the list, compares adjacent pairs, and swaps them when out of order. Each pass bubbles the largest remaining unsorted item to its proper position. An optional early-exit optimization stops the algorithm if a full pass performs no swaps (meaning the list is already sorted).</p>
 <p>Time complexity (n elements):</p>
 <ul>
 <li>Big-O (worst): O(n^2)</li>
@@ -7636,13 +7636,12 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Merge-Sort">Merge Sort<a class="anchor-link" href="#Merge-Sort">¶</a></h2><p>Merge Sort is a classic divide-and-conquer algorithm: it recursively splits the list until sublists have size 1, then merges the sublists back together in sorted order.</p>
-<p>Time complexity (n elements):</p>
+<h2 id="Merge-Sort">Merge Sort<a class="anchor-link" href="#Merge-Sort">¶</a></h2><p>Merge Sort is a divide-and-conquer algorithm that recursively splits the list until sublists have size 1. The sublists are then merged back together in sorted order.</p>
+<p>Time complexity:</p>
 <ul>
 <li>$\Theta(n\log n)$</li>
 </ul>
-<p>Merge Sort works by recursively dividing the array into halves until each sub-array is of size one.</p>
-<p>A list of size 32 would be divided into two lists of size 16, then four lists of size 8, sixteen lists of size 2, and finally thirty-two lists of size 1. This accounts for the $\log n$ factor in the time complexity. For example, $\log_2 32 = 5$, so it takes 5 divisions to break the list down to individual elements.</p>
+<p>A list of 8 elements will be divided into two lists of 4 elements, then four lists of 2 elements, and finally eight lists of 1 element. This accounts for the $\log n$ factor in the time complexity. For example, $\log_2 8 = 3$, so it takes 3 divisions to break the list down to individual elements.</p>
 <div style="text-align:center">
 <img alt="merge sort visual" src="https://latessa.github.io/cpp-labs/images/Lab13/merge.png" style="width:80%;height:auto;"/>
 </div>
@@ -7656,7 +7655,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -7733,23 +7732,24 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Quick-Sort">Quick Sort<a class="anchor-link" href="#Quick-Sort">¶</a></h2><p>Quick Sort is also a divide-and-conquer algorithm but relies on partitioning around a pivot. Elements less than the pivot go left. Elements that are greater than the pivot go right. Then the algorithm recurses on the left and right subarrays.</p>
+<h2 id="Quick-Sort">Quick Sort<a class="anchor-link" href="#Quick-Sort">¶</a></h2><p>Quick Sort is also a divide-and-conquer algorithm but relies on partitioning around a pivot. Elements that are less than the pivot go left. Elements that are greater than the pivot go right. Then the algorithm recurses on the left and right subarrays.</p>
 <div style="text-align:center">
 <img alt="balanced quick sort, first pass" src="https://latessa.github.io/cpp-labs/images/Lab13/quick_sort_balanced.png" style="width:80%;height:auto;"/>
 </div>
 <p>Pivot selection matters:</p>
 <ul>
-<li>Left/Right pivot: simple but can be worst-case (O(n^2)).</li>
-<li>Center (middle index): helps in cases but still not adversarially robust. This means that a sequence of numbers can be designed so that the center element produces the most imbalanced partitioning.</li>
-<li>Random pivot: reduces chance of consistently bad splits.</li>
+<li>Left/Right pivot: simple but can be worst-case ((\mathcal{O}(n^2))).</li>
+<li>Center (middle index): helps in some cases but is not adversarially robust; a carefully crafted sequence can still produce very imbalanced partitions.</li>
+<li>Random pivot: reduces the chance of consistently bad splits.</li>
 </ul>
 <div style="text-align:center">
 <img alt="unbalanced quick sort, short example" src="https://latessa.github.io/cpp-labs/images/Lab13/quick_sort_unbalanced.png" style="width:80%;height:auto;"/>
 </div>
 <p>Time complexity:</p>
 <ul>
-<li>Big-O (worst): O(n^2) when splits are highly unbalanced</li>
-<li>Big-Ω (best): Ω(n log n) when splits are well-balanced</li>
+<li>Worst-case: (\mathcal{O}(n^2)) — when partitions are highly unbalanced.</li>
+<li>Average-case (expected): (\Theta(n\log n)) — typical behavior for random pivots or random input.</li>
+<li>Best-case: (\Omega(n\log n)) — when partitions are consistently well balanced.</li>
 </ul>
 </div>
 </div>
