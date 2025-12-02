@@ -7636,17 +7636,17 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Merge-Sort">Merge Sort<a class="anchor-link" href="#Merge-Sort">¶</a></h2><p>Merge Sort is a divide-and-conquer algorithm that recursively splits the list until sublists have size 1. The sublists are then merged back together in sorted order.</p>
+<h2 id="Merge-Sort">Merge Sort<a class="anchor-link" href="#Merge-Sort">¶</a></h2><p>Merge Sort is a divide-and-conquer algorithm that recursively splits the array until subarrays have size 1. The subarrays are then merged back together in sorted order.</p>
 <p>Time complexity:</p>
 <ul>
 <li>$\Theta(n\log n)$</li>
 </ul>
-<p>A list of 8 elements will be divided into two lists of 4 elements, then four lists of 2 elements, and finally eight lists of 1 element. This accounts for the $\log n$ factor in the time complexity. For example, $\log_2 8 = 3$, so it takes 3 divisions to break the list down to individual elements.</p>
+<p>An array of 8 elements will be divided into two arrays of 4 elements, then four arrays of 2 elements, and finally eight arrays of 1 element. This accounts for the $\log n$ factor in the time complexity. For example, $\log_2 8 = 3$, so it takes 3 divisions to break the array down to individual elements.</p>
 <div style="text-align:center">
 <img alt="merge sort visual" src="https://latessa.github.io/cpp-labs/images/Lab13/merge.png" style="width:80%;height:auto;"/>
 </div>
-<p>The $n$ factor comes from the merging process. Sorted lists of size $n$ can be merged in linear time, $O(n)$.</p>
-<p>Consider the following sorted lists: <code>[2, 5, 7, 12]</code> and <code>[3, 8, 9, 10]</code>.</p>
+<p>The $n$ factor comes from the merging process. Sorted arrays of size $n$ can be merged in linear time, $O(n)$.</p>
+<p>Consider the following sorted arrays: <code>[2, 5, 7, 12]</code> and <code>[3, 8, 9, 10]</code>.</p>
 </div>
 </div>
 </div>
@@ -7655,7 +7655,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-c++"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -7738,8 +7738,8 @@ a.anchor-link {
 </div>
 <p>Pivot selection matters:</p>
 <ul>
-<li>Left/Right pivot: simple but can be worst-case ((\mathcal{O}(n^2))).</li>
-<li>Center (middle index): helps in some cases but is not adversarially robust; a carefully crafted sequence can still produce very imbalanced partitions.</li>
+<li>Left or right pivot: simple but can be worst-case $\mathcal{O}(n^2)$.</li>
+<li>Center (middle index): helps in some cases but is not adversarially robust. A carefully crafted sequence can still produce very imbalanced partitions.</li>
 <li>Random pivot: reduces the chance of consistently bad splits.</li>
 </ul>
 <div style="text-align:center">
@@ -7747,9 +7747,9 @@ a.anchor-link {
 </div>
 <p>Time complexity:</p>
 <ul>
-<li>Worst-case: (\mathcal{O}(n^2)) — when partitions are highly unbalanced.</li>
-<li>Average-case (expected): (\Theta(n\log n)) — typical behavior for random pivots or random input.</li>
-<li>Best-case: (\Omega(n\log n)) — when partitions are consistently well balanced.</li>
+<li>$\mathcal{O}(n^2)$ — when partitions are highly unbalanced.</li>
+<li>On Average: $\Theta(n\log n)$ — typical behavior for random pivots or random input.</li>
+<li>$\Omega(n\log n)$ — when partitions are consistently well balanced.</li>
 </ul>
 </div>
 </div>
@@ -7761,7 +7761,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Using-the-Lab13-Program-to-Gather-Performance-Data">Using the Lab13 Program to Gather Performance Data<a class="anchor-link" href="#Using-the-Lab13-Program-to-Gather-Performance-Data">¶</a></h2><p>The provided program generates an integer array, runs Quick Sort, Merge Sort, and Bubble Sort, and reports timings in milliseconds. It also logs runs to <code>lab13_log.txt</code>.</p>
+<h2 id="Using-the-Lab13-Program-to-Gather-Performance-Data">Using the Lab13 Program to Gather Performance Data<a class="anchor-link" href="#Using-the-Lab13-Program-to-Gather-Performance-Data">¶</a></h2><p>The provided program generates integer arrays, runs Quick Sort, Merge Sort, and Bubble Sort, and reports timings in milliseconds. It also logs runs to <code>lab13_log.txt</code>.</p>
 <p>Build:</p>
 <div class="highlight"><pre><span></span>g++<span class="w"> </span>-o<span class="w"> </span>lab13.out<span class="w"> </span>lab13.cpp
 </pre></div>
@@ -7784,7 +7784,7 @@ a.anchor-link {
 <span class="c1"># Larger runs with printing turned off</span>
 ./lab13.out<span class="w"> </span>--size<span class="w"> </span><span class="m">100000</span><span class="w"> </span>--order<span class="w"> </span>random<span class="w"> </span>--pivot<span class="w"> </span>random<span class="w"> </span>--bubble-early-exit<span class="w"> </span>on
 </pre></div>
-<p>Note that you if you don't use command line arguments, you can manually set the input parameters at the top of the <code>main</code> function in <code>lab13.cpp</code>. And then rebuild the program.</p>
+<p>Note that if you don't use command line arguments, you can manually set the input parameters at the top of the <code>main</code> function in <code>lab13.cpp</code> and then rebuild the program.</p>
 </div>
 </div>
 </div>
